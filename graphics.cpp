@@ -103,6 +103,9 @@ bool Graphics::Initialize(int width, int height)
 	// Saturn
 	m_sphere9 = new Sphere(48, "assets\\Saturn.jpg");
 
+	// Saturn's Rings
+	m_ring = new Ring(48, "assets\\Saturn_ring.png");
+
 	// Uranus
 	m_sphere10 = new Sphere(48, "assets\\Uranus.jpg");
 
@@ -258,7 +261,25 @@ void Graphics::HierarchicalUpdate2(double dt) {
 	if (m_sphere9 != NULL)
 		m_sphere9->Update(localTransform);
 
+
+	// Saturn's Rings
+	speed = { 3, 3, 3 };
+	dist = { 1.25, .50, 1.25 };  // todo I think this probably has to be 0'd out, but I'm leaving it like this to see Saturn's rings orbit in a funny way
+	rotVector = { 1.,1.,1. };
+	rotSpeed = { .25, .25, .25 };
+	scale = { 1.f, 1.f, 1.f };  // todo adjust
+	localTransform = modelStack.top();
+	localTransform *= glm::translate(glm::mat4(1.f),
+		glm::vec3(cos(speed[0] * dt) * dist[0], sin(speed[1] * dt) * dist[1], sin(speed[2] * dt) * dist[2]));
+	modelStack.push(localTransform);			// store moon-planet-sun coordinate
+	localTransform *= glm::rotate(glm::mat4(1.f), rotSpeed[0] * (float)dt, rotVector);
+	localTransform *= glm::scale(glm::vec3(scale[0], scale[1], scale[2]));
+	if (m_sphere3 != NULL)
+		m_sphere3->Update(localTransform);
+
+	modelStack.pop();	// Saturn's Rings
 	modelStack.pop();	// Saturn
+
 
 	// Uranus
 	speed = { .3, .3, .3 };

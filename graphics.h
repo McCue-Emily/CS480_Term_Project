@@ -9,6 +9,7 @@ using namespace std;
 #include "camera.h"
 #include "shader.h"
 #include "object.h"
+#include "ring.h"
 #include "sphere.h"
 #include "mesh.h"
 
@@ -64,6 +65,7 @@ class Graphics
     Sphere* m_sphere13;
 
     Mesh* m_mesh;
+    Ring* m_ring;
 
 
 

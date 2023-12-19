@@ -104,7 +104,7 @@ bool Graphics::Initialize(int width, int height)
 	m_sphere9 = new Sphere(48, "assets\\Saturn.jpg");
 
 	// Saturn's Rings
-	m_ring = new Ring(48, "assets\\Saturn_ring.png");
+	// todo m_ring = new Ring(48, "assets\\Saturn_ring.png");
 
 	// Uranus
 	m_sphere10 = new Sphere(48, "assets\\Uranus.jpg");
@@ -261,7 +261,7 @@ void Graphics::HierarchicalUpdate2(double dt) {
 	if (m_sphere9 != NULL)
 		m_sphere9->Update(localTransform);
 
-
+	/*
 	// Saturn's Rings
 	speed = { 3, 3, 3 };
 	dist = { 1.25, .50, 1.25 };  // todo I think this probably has to be 0'd out, but I'm leaving it like this to see Saturn's rings orbit in a funny way
@@ -278,6 +278,7 @@ void Graphics::HierarchicalUpdate2(double dt) {
 		m_sphere3->Update(localTransform);
 
 	modelStack.pop();	// Saturn's Rings
+	*/
 	modelStack.pop();	// Saturn
 
 

@@ -25,6 +25,8 @@ class Graphics
     void HierarchicalUpdate2(double dt);
     void Render();
 
+    // bool loadCubeMapTexture();
+
     Camera* getCamera() { return m_camera; }
 
   private:
@@ -39,6 +41,8 @@ class Graphics
 
     Camera *m_camera;
     Shader *m_shader;
+
+    //Texture *m_cubeMapTexture;
 
     GLint m_projectionMatrix;
     GLint m_viewMatrix;
@@ -65,7 +69,12 @@ class Graphics
 
     Mesh* m_mesh;
 
-
+    /*const char* right = "asset\\right.png";
+    const char* left = "asset\\left.png";
+    const char* top = "asset\\top.png";
+    const char* bottom = "asset\\bottom.png";
+    const char* front = "asset\\front.png";
+    const char* back = "asset\\back.png";*/
 
 };
 

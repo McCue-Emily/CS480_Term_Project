@@ -3,6 +3,13 @@
 #include "engine.h"
 #include "glm/ext.hpp"
 
+bool firstMouse = true;
+float yaw = -90.0f;	// yaw is initialized to -90.0 degrees since a yaw of 0.0 results in a direction vector pointing to the right so we initially rotate a bit to the left.
+float pitch = 0.0f;
+float lastX = 800.0f / 2.0;
+float lastY = 600.0 / 2.0;
+float fov = 45.0f;
+
 Engine::Engine(const char* name, int width, int height)
 {
   m_WINDOW_NAME = name;
@@ -22,6 +29,7 @@ Engine::~Engine()
 
 bool Engine::Initialize()
 {
+  
   // Start a window
   m_window = new Window(m_WINDOW_NAME, &m_WINDOW_WIDTH, &m_WINDOW_HEIGHT);
   if(!m_window->Initialize())
@@ -62,10 +70,14 @@ void Engine::Run()
 
   while (!glfwWindowShouldClose(m_window->getWindow()))
   {
+      
       ProcessInput();
+    
       Display(m_window->getWindow(), glfwGetTime());
       glfwPollEvents();
+     
   }
+
   m_running = false;
 
 }
@@ -75,27 +87,50 @@ void Engine::ProcessInput()
     if (glfwGetKey(m_window->getWindow(), GLFW_KEY_ESCAPE) == GLFW_PRESS)
         glfwSetWindowShouldClose(m_window->getWindow(), true);
 
-    Camera* cam = m_graphics->getCamera();
-    // WASD
-    if (glfwGetKey(m_window->getWindow(), GLFW_KEY_W) == GLFW_PRESS)
-        cam->Update(1, 0, 0, 0, 0, 0);
-    if (glfwGetKey(m_window->getWindow(), GLFW_KEY_A) == GLFW_PRESS)
-        cam->Update(0, -1, 0, 0, 0, 0);
-    if (glfwGetKey(m_window->getWindow(), GLFW_KEY_S) == GLFW_PRESS)
-        cam->Update(-1, 0, 0, 0, 0, 0);
+    double xpos;
+    double ypos;
+    glfwSetInputMode(m_window->getWindow(), GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+    glfwGetCursorPos(m_window->getWindow(), &xpos, &ypos);
+
+    float xoffset = xpos - lastX;
+    float yoffset = lastY - ypos; // reversed since y-coordinates range from bottom to top
+    lastX = xpos;
+    lastY = ypos;
+
+    const float sensitivity = 0.1f;
+    xoffset *= sensitivity;
+    yoffset *= sensitivity;
+    yaw += xoffset;
+    pitch += yoffset;
+
+    // make sure that when pitch is out of bounds, screen doesn't get flipped
+    if (pitch > 89.0f)
+        pitch = 89.0f;
+    if (pitch < -89.0f)
+        pitch = -89.0f;
+
+    glm::vec3 front;
+    front.x = cos(glm::radians(yaw)) * cos(glm::radians(pitch));
+    front.y = sin(glm::radians(pitch));
+    front.z = sin(glm::radians(yaw)) * cos(glm::radians(pitch));
+    glm::vec3 cameraFront = glm::normalize(front);
+
+    m_graphics->getCamera()->updateView(cameraFront);
+    m_graphics->getCamera()->zoom(fov);
+
     if (glfwGetKey(m_window->getWindow(), GLFW_KEY_D) == GLFW_PRESS)
-        cam->Update(0, 1, 0, 0, 0, 0);
+    m_graphics->getCamera()->cameraPosHorz(0.5f);
+    if (glfwGetKey(m_window->getWindow(), GLFW_KEY_A) == GLFW_PRESS)
+    m_graphics->getCamera()->cameraPosHorz(-0.5f);
+    if (glfwGetKey(m_window->getWindow(), GLFW_KEY_W) == GLFW_PRESS)
+        m_graphics->getCamera()->cameraPosVert(0.5f);
+    if (glfwGetKey(m_window->getWindow(), GLFW_KEY_S) == GLFW_PRESS)
+        m_graphics->getCamera()->cameraPosVert(-0.5f);
+        
 
-    // MOUSE  // see https://www.glfw.org/docs/3.3/input_guide.html#raw_mouse_motion
-    double x = 0, y = 0;
-    glfwGetCursorPos(m_window->getWindow(), &x, &y);
-    if (x != 0)
-        cam->Update(0,0,0,x,0,0);
-    if (y != 0)
-        cam->Update(0,0,0,0,y,0);
 
-    // scroll
-    cam->Update(0, 0, 0, 0, 0, fov);
+
+
 }
 
 void Engine::cursor_position_callback(GLFWwindow* window, double xpos, double ypos)
@@ -136,5 +171,9 @@ static void cursorPositionCallBack(GLFWwindow* window, double xpos, double ypos)
 }
 
 static void scroll_callback(GLFWwindow* window, double xoffset, double yoffset) {
-    fov += yoffset;
+    fov -= (float)yoffset;
+    if (fov < 1.0f)
+        fov = 1.0f;
+    if (fov > 45.0f)
+        fov = 45.0f;
 }

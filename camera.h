@@ -9,21 +9,21 @@ class Camera
     Camera();
     ~Camera();
     bool Initialize(int w, int h);
-    void Update(int dx, int dy, int dz, double drx, double dry, double drz);
-    void Update(glm::mat4 dview);
     glm::mat4 GetProjection();
     glm::mat4 GetView();
 
+    void updateView(glm::vec3 cameraFront);
+    void cameraPosVert(float speed);
+    void cameraPosHorz(float speed);
+    void zoom(float fov);
   
   private:
-
+    glm::vec3 cameraPos = glm::vec3(0.0f, 0.0f, 20.0f);
+    glm::vec3 cameraFront = glm::vec3(0.0, 1.0, 1.0);
+    glm::vec3 cameraUp = glm::vec3(0.0f, 1.0f, 0.0f);
     double x = 0.0;
     double y = 10.0;
     double z = -16.0;
-    double rx = 0.0;
-    double ry = 0.0;
-    double rz = 0.0;
-
     glm::mat4 projection;
     glm::mat4 view;
 };

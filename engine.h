@@ -7,6 +7,7 @@
 #include "graphics.h"
 
 static void cursorPositionCallBack(GLFWwindow*, double xpos, double ypos);
+static void scroll_callback(GLFWwindow* window, double xoffset, double yoffset);
 
 class Engine
 {
@@ -35,8 +36,6 @@ class Engine
     Graphics *m_graphics;
 
     bool m_running;
-
-    float fov;
 };
 
 #endif // ENGINE_H

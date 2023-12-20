@@ -52,6 +52,16 @@ class Graphics
     Sphere* m_sphere;
     Sphere* m_sphere2;
     Sphere* m_sphere3;
+    Sphere* m_sphere4;
+    Sphere* m_sphere5;
+    Sphere* m_sphere6;
+    Sphere* m_sphere7;
+    Sphere* m_sphere8;
+    Sphere* m_sphere9;
+    Sphere* m_sphere10;
+    Sphere* m_sphere11;
+    Sphere* m_sphere12;
+    Sphere* m_sphere13;
 
     Mesh* m_mesh;
 

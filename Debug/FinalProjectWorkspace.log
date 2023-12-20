@@ -1,0 +1,41 @@
+﻿  camera.cpp
+  engine.cpp
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics_headers.h(5,10): error C1083: Cannot open include file: 'assimp/Importer.hpp': No such file or directory
+  (compiling source file 'camera.cpp')
+  
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\window.h(4,10): error C1083: Cannot open include file: 'GL/glew.h': No such file or directory
+  (compiling source file 'engine.cpp')
+  
+  graphics.cpp
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics_headers.h(5,10): error C1083: Cannot open include file: 'assimp/Importer.hpp': No such file or directory
+  (compiling source file 'graphics.cpp')
+  
+  main.cpp
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\window.h(4,10): error C1083: Cannot open include file: 'GL/glew.h': No such file or directory
+  (compiling source file 'main.cpp')
+  
+  mesh.cpp
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics_headers.h(5,10): error C1083: Cannot open include file: 'assimp/Importer.hpp': No such file or directory
+  (compiling source file 'mesh.cpp')
+  
+  object.cpp
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics_headers.h(5,10): error C1083: Cannot open include file: 'assimp/Importer.hpp': No such file or directory
+  (compiling source file 'object.cpp')
+  
+  shader.cpp
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics_headers.h(5,10): error C1083: Cannot open include file: 'assimp/Importer.hpp': No such file or directory
+  (compiling source file 'shader.cpp')
+  
+  sphere.cpp
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics_headers.h(5,10): error C1083: Cannot open include file: 'assimp/Importer.hpp': No such file or directory
+  (compiling source file 'sphere.cpp')
+  
+  Texture.cpp
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics_headers.h(5,10): error C1083: Cannot open include file: 'assimp/Importer.hpp': No such file or directory
+  (compiling source file 'Texture.cpp')
+  
+  window.cpp
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\window.h(4,10): error C1083: Cannot open include file: 'GL/glew.h': No such file or directory
+  (compiling source file 'window.cpp')
+  
+  Generating Code...

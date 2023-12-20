@@ -16,6 +16,8 @@ class Camera
     void cameraPosVert(float speed);
     void cameraPosHorz(float speed);
     void zoom(float fov);
+
+    void PlanetaryObsMode(glm::vec3 pos, glm::vec3 front, glm::vec3 up);
   
   private:
     glm::vec3 cameraPos = glm::vec3(0.0f, 0.0f, 20.0f);
@@ -26,6 +28,9 @@ class Camera
     double z = -16.0;
     glm::mat4 projection;
     glm::mat4 view;
+
+    //glm::vec3 resetCoords = glm::vec3(0.0, 1.0, 1.0);
+
 };
 
 #endif /* CAMERA_H */

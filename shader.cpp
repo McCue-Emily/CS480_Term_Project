@@ -36,7 +36,7 @@ bool Shader::Initialize()
 bool Shader::AddShader(GLenum ShaderType)
 {
   std::string s;
-  
+
   if(ShaderType == GL_VERTEX_SHADER)
   {
     s = "#version 460\n \
@@ -45,10 +45,10 @@ bool Shader::AddShader(GLenum ShaderType)
           layout (location = 1) in vec3 v_color; \
           layout (location = 2) in vec2 v_tc;  \
           uniform bool hasTexture;\
-             \
+          \
           smooth out vec3 color; \
           out vec2 tc;\
-          \
+            \
           uniform mat4 projectionMatrix; \
           uniform mat4 viewMatrix; \
           uniform mat4 modelMatrix; \

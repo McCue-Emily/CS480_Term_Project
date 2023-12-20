@@ -31,21 +31,22 @@ bool Texture::loadTexture(const char* texFile) {
 	return true;
 }
 
-bool Texture::loadCubeTexture(const char* right,
-	const char* left,
-	const char* top,
-	const char* bottom,
-	const char* front,
-	const char* back) {
-
-	m_TextureID = SOIL_load_OGL_cubemap(right, left, top, bottom, front, back, SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_INVERT_Y);
-
-	if (!m_TextureID) {
-		printf("Failed: Could not open texture file!\n");
-		return false;
-	}
-	return true;
-}
+//bool Texture::loadCubeTexture(const char* right,
+//	const char* left,
+//	const char* top,
+//	const char* bottom,
+//	const char* front,
+//	const char* back) {
+//
+//	m_cubeTextureID = SOIL_load_OGL_cubemap(right, left, top, bottom, front, back, SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_INVERT_Y);
+//
+//	if (!m_cubeTextureID) {
+//		printf("Failed: Could not open texture file!\n");
+//		return false;
+//	}
+//
+//	return true;
+//}
 
 bool Texture::initializeTexture() {
 

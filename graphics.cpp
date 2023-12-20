@@ -41,6 +41,7 @@ bool Graphics::Initialize(int width, int height)
 		return false;
 	}
 
+
 	// Set up the shaders
 	m_shader = new Shader();
 	if (!m_shader->Initialize())
@@ -48,6 +49,19 @@ bool Graphics::Initialize(int width, int height)
 		printf("Shader Failed to Initialize\n");
 		return false;
 	}
+
+	//// create and initialize the cube map texture
+	//m_cubeMapTexture = new Texture(
+	//	"asset\\right.png", "asset\\left.png", 
+	//	"asset\\top.png", "asset\\bottom.png", 
+	//	"asset\\front.png", "asset\\back.png");
+	//if (!m_cubeMapTexture->loadCubeTexture(
+	//	"asset\\right.png", "asset\\left.png", 
+	//	"asset\\top.png", "asset\\bottom.png", 
+	//	"asset\\front.png", "asset\\back.png")) {
+	//	cout << "Cube Map Texture failed to load.\n";
+	//	return false;
+	//}
 
 	// Add the vertex shader
 	if (!m_shader->AddShader(GL_VERTEX_SHADER))
@@ -146,11 +160,11 @@ void Graphics::HierarchicalUpdate2(double dt) {
 		m_sphere->Update(localTransform);
 
 	// Mercury
-	speed = { 1.25, 1.25, 1.25 };
+	speed = { 0.25, 0.25, 0.25 };
 	dist = { 3. , 0., 3. };
 	transform(dist.begin(), dist.end(), dist.begin(), [system_scale](float& c) { return c * system_scale; });
 	rotVector = { 0. , .98, 0. };
-	rotSpeed = { 0.1, 0.1, 0.1 };
+	rotSpeed = { 0.01, 0.01, 0.01 };
 	scale = { .75,.75,.75 };
 	localTransform = modelStack.top();				// start with sun's coordinate
 	localTransform *= glm::translate(glm::mat4(1.f),
@@ -164,11 +178,11 @@ void Graphics::HierarchicalUpdate2(double dt) {
 	modelStack.pop();	// Mercury
 
 	// Venus
-	speed = { 1., 1., 1. };
+	speed = { .1, 0.1, .1 };
 	dist = { 8. , 0., 8. };
 	transform(dist.begin(), dist.end(), dist.begin(), [system_scale](float& c) { return c * system_scale * 1.1; });
 	rotVector = { 0. , 1., 0. };
-	rotSpeed = { 0.05, 0.05, 0.05 };
+	rotSpeed = { 0.005, 0.005, 0.005 };
 	scale = { .5f,.5f,.5f };
 	localTransform = modelStack.top();				// start with sun's coordinate
 	localTransform *= glm::translate(glm::mat4(1.f),
@@ -183,11 +197,11 @@ void Graphics::HierarchicalUpdate2(double dt) {
 
 
 	// position of the Earth
-	speed = { .75, .75, .75 };
+	speed = { .075, .075, .075 };
 	dist = { 15. , 0., 15.};
 	transform(dist.begin(), dist.end(), dist.begin(), [system_scale](float& c) { return c * system_scale; });
 	rotVector = { 0. , 1., 0. };
-	rotSpeed = { 1., 1., 1. };
+	rotSpeed = { 0.1, .1, .1 };
 	scale = { .75,.75,.75 };
 	localTransform = modelStack.top();				// start with sun's coordinate
 	localTransform *= glm::translate(glm::mat4(1.f),
@@ -199,11 +213,11 @@ void Graphics::HierarchicalUpdate2(double dt) {
 		m_sphere2->Update(localTransform);
 	
 	// position of the moon
-	speed = { 3, 3, 3 };
+	speed = { 0.3, 0.3, 0.3 };
 	dist = { 1.25, .50, 1.25 };
 	transform(dist.begin(), dist.end(), dist.begin(), [system_scale](float& c) { return c * system_scale * 0.5; });
 	rotVector = { 1.,1.,1. };
-	rotSpeed = { .25, .25, .25 };
+	rotSpeed = { .025, .025, .025 };
 	scale = { .20f, .20f, .20f };
 	localTransform = modelStack.top();
 	localTransform *= glm::translate(glm::mat4(1.f),
@@ -218,11 +232,11 @@ void Graphics::HierarchicalUpdate2(double dt) {
 	modelStack.pop();	// Earth
 
 	// Mars
-	speed = { .70, .70, .70 };
+	speed = { .070, .070, .070 };
 	dist = { 23. , 0., 23. };
 	transform(dist.begin(), dist.end(), dist.begin(), [system_scale](float& c) { return c * system_scale; });
 	rotVector = { 0. , 1., 0. };
-	rotSpeed = { 1.1, 1.1, 1.1 };
+	rotSpeed = { .11, .11, .11 };
 	scale = { .75,.75,.75 };
 	localTransform = modelStack.top();				// start with sun's coordinate
 	localTransform *= glm::translate(glm::mat4(1.f),
@@ -237,11 +251,11 @@ void Graphics::HierarchicalUpdate2(double dt) {
 
 
 	// Jupiter
-	speed = { .5, .5, .5 };
+	speed = { .05, .05, .05 };
 	dist = { 60. , 0., 760. };
 	transform(dist.begin(), dist.end(), dist.begin(), [system_scale](float& c) { return c * system_scale * 0.5; });
 	rotVector = { 0. , 1., 0. };
-	rotSpeed = { 2., 2., 2. };
+	rotSpeed = { .2, .2, .2 };
 	scale = { .75,.75,.75 };
 	localTransform = modelStack.top();				// start with sun's coordinate
 	localTransform *= glm::translate(glm::mat4(1.f),
@@ -255,11 +269,11 @@ void Graphics::HierarchicalUpdate2(double dt) {
 	modelStack.pop();	// Jupiter
 
 	// Saturn
-	speed = { .4, .4, .4 };
+	speed = { .04, .04, .04 };
 	dist = { 83. , 0., 83. };
 	transform(dist.begin(), dist.end(), dist.begin(), [system_scale](float& c) { return c * system_scale; });
 	rotVector = { 0. , 1., 0. };
-	rotSpeed = { 1.9, 1.9, 1.9 };
+	rotSpeed = { .19, .19, .19 };
 	scale = { .75,.75,.75 };
 	localTransform = modelStack.top();				// start with sun's coordinate
 	localTransform *= glm::translate(glm::mat4(1.f),
@@ -292,11 +306,11 @@ void Graphics::HierarchicalUpdate2(double dt) {
 
 
 	// Uranus
-	speed = { .3, .3, .3 };
+	speed = { .03, .03, .03 };
 	dist = { 203. , 0., 203. };
 	transform(dist.begin(), dist.end(), dist.begin(), [system_scale](float& c) { return c * system_scale * 0.2; });
 	rotVector = { 0. , 1., 0. };
-	rotSpeed = { 1.5, 1.5, 1.5 };
+	rotSpeed = { .15, .15, .15 };
 	scale = { .75,.75,.75 };
 	localTransform = modelStack.top();				// start with sun's coordinate
 	localTransform *= glm::translate(glm::mat4(1.f),
@@ -310,11 +324,11 @@ void Graphics::HierarchicalUpdate2(double dt) {
 	modelStack.pop();	// Uranus
 
 	// Neptune
-	speed = { .2, .2, .2 };
+	speed = { .02, .02, .02 };
 	dist = { 323. , 0., 323. };
 	transform(dist.begin(), dist.end(), dist.begin(), [system_scale](float& c) { return c * system_scale * 0.2; });
 	rotVector = { 0. , 1., 0. };
-	rotSpeed = { 1.4, 1.4, 1.4 };
+	rotSpeed = { .14, .14, .14 };
 	scale = { .75,.75,.75 };
 	localTransform = modelStack.top();				// start with sun's coordinate
 	localTransform *= glm::translate(glm::mat4(1.f),
@@ -328,11 +342,11 @@ void Graphics::HierarchicalUpdate2(double dt) {
 	modelStack.pop();	// Neptune
 
 	// Ceres - Asteroid
-	speed = { .75, .75, .75 };
+	speed = { .075, .075, .075 };
 	dist = { 7. , 0., 7. };
 	transform(dist.begin(), dist.end(), dist.begin(), [system_scale](float& c) { return c * system_scale; });
 	rotVector = { 0. , 1., 0. };
-	rotSpeed = { 1., 1., 1. };
+	rotSpeed = { .1, .1, .1 };
 	scale = { .75,.75,.75 };
 	localTransform = modelStack.top();				// start with sun's coordinate
 	localTransform *= glm::translate(glm::mat4(1.f),
@@ -347,11 +361,11 @@ void Graphics::HierarchicalUpdate2(double dt) {
 
 
 	// Eris - Asteroid
-	speed = { .75, .75, .75 };
+	speed = { .075, .075, .075 };
 	dist = { 7. , 0., 7. };
 	transform(dist.begin(), dist.end(), dist.begin(), [system_scale](float& c) { return c * system_scale; });
 	rotVector = { 0. , 1., 0. };
-	rotSpeed = { 1., 1., 1. };
+	rotSpeed = { .1, .1, .1 };
 	scale = { .75,.75,.75 };
 	localTransform = modelStack.top();				// start with sun's coordinate
 	localTransform *= glm::translate(glm::mat4(1.f),
@@ -365,11 +379,11 @@ void Graphics::HierarchicalUpdate2(double dt) {
 	modelStack.pop();	// Eris
 
 	// Haumea - Asteroid
-	speed = { .75, .75, .75 };
+	speed = { .075, .075, .075 };
 	dist = { 7. , 0., 7. };
 	transform(dist.begin(), dist.end(), dist.begin(), [system_scale](float& c) { return c * system_scale; });
 	rotVector = { 0. , 1., 0. };
-	rotSpeed = { 1., 1., 1. };
+	rotSpeed = { .1, .1, .1 };
 	scale = { .75,.75,.75 };
 	localTransform = modelStack.top();				// start with sun's coordinate
 	localTransform *= glm::translate(glm::mat4(1.f),
@@ -437,6 +451,10 @@ void Graphics::Render()
 		glUniformMatrix4fv(m_modelMatrix, 1, GL_FALSE, glm::value_ptr(m_cube->GetModel()));
 		m_cube->Render(m_positionAttrib,m_colorAttrib);
 	}*/
+
+	//// Set the cube map texture
+	//glActiveTexture(GL_TEXTURE0);
+	//glBindTexture(GL_TEXTURE_CUBE_MAP, m_cubeMapTexture->getCubeTextureID());
 	
 	// Starship
 	if (m_mesh != NULL) {
@@ -678,7 +696,26 @@ void Graphics::Render()
 		string val = ErrorString(error);
 		std::cout << "Error initializing OpenGL! " << error << ", " << val << std::endl;
 	}
+
+	// unbind cube map texture
+	glBindTexture(GL_TEXTURE_CUBE_MAP, 0);
+
+	// Disable to shader program
+	glUseProgram(0);
+
 }
+
+//bool Graphics::loadCubeMapTexture() {
+//	// create a new cube map texture object
+//	m_cubeMapTexture = new Texture();
+//
+//	// load the cube map texture
+//	if (!m_cubeMapTexture->loadCubeTexture(right, left, top, bottom, front, back)) {
+//		// if loading failes
+//		cout << "Error loading cube texture.\n";
+//		return false;
+//	}
+//}
 
 
 bool Graphics::collectShPrLocs() {
@@ -771,3 +808,4 @@ std::string Graphics::ErrorString(GLenum error)
 		return "None";
 	}
 }
+

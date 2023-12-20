@@ -18,11 +18,12 @@ class Engine
     bool Initialize();
     void Run();
     void ProcessInput();
+    void ProcessInputObservationMode();
     unsigned int getDT();
     long long GetCurrentTimeMillis();
     void Display(GLFWwindow*, double);
     static void cursor_position_callback(GLFWwindow* window, double xpos, double ypos);
-
+    
   
   private:
     // Window related variables
@@ -33,7 +34,11 @@ class Engine
     bool m_FULLSCREEN;
 
 
-    Graphics *m_graphics;
+    Graphics* m_graphics;
+    Camera* m_planetObs;
+
+    //glm::vec3 resetCoords = glm::vec3(0.0, 1.0, 1.0);
+
 
     bool m_running;
 };

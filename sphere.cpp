@@ -26,7 +26,7 @@ Sphere::Sphere(int prec, const char* fname) { // prec is precision, or number of
     setupBuffers();
     //setupModelMatrix(glm::vec3(0., 0., 0.), 0., 1.);
 
-        // load texture from file
+    // load texture from file
     m_texture = new Texture(fname);
     if (m_texture)
         hasTex = true;
@@ -50,7 +50,7 @@ void Sphere::Render(GLint positionAttribLoc, GLint colorAttribLoc)
     // Set vertex attribute pointers to the load correct data
     glVertexAttribPointer(positionAttribLoc, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), 0);
     glVertexAttribPointer(colorAttribLoc, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)offsetof(Vertex, normal));
- 
+
 
     // Bind your index buffer
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, IB);
@@ -80,7 +80,7 @@ void Sphere::Render(GLint posAttribLoc, GLint colAttribLoc, GLint tcAttribLoc, G
     glVertexAttribPointer(colAttribLoc, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)offsetof(Vertex, normal));
     glVertexAttribPointer(tcAttribLoc, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)offsetof(Vertex, texcoord));
     
-
+    
     // If has texture, set up texture unit(s): update here for texture rendering
     // If has texture, set up texture unit(s) Update here to activate and assign texture unit
     if (m_texture != NULL) {
@@ -91,7 +91,7 @@ void Sphere::Render(GLint posAttribLoc, GLint colAttribLoc, GLint tcAttribLoc, G
     else
         glUniform1i(hasTextureLoc, false);
 
-
+  
     
     // Bind your Element Array
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, IB);

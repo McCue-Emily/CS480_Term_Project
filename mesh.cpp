@@ -46,7 +46,7 @@ Mesh::Mesh(glm::vec3 pivot, const char* fname, const char* tname)
 	angle = 0.0f;
 	pivotLocation = pivot;
 	model = glm::translate(glm::mat4(1.0f), pivotLocation);
-
+	
 	// Buffer Set Up
 	if (!InitBuffers()) {
 		printf("some buffers not initialized.\n");
@@ -150,18 +150,17 @@ bool Mesh::InitBuffers() {
 	// For OpenGL 3
 	glGenVertexArrays(1, &vao);
 	glBindVertexArray(vao);
-
+	
 	glGenBuffers(1, &VB);
-
+	
 	glBindBuffer(GL_ARRAY_BUFFER, VB);
-
+	
 	glBufferData(GL_ARRAY_BUFFER, sizeof(Vertex) * Vertices.size(), &Vertices[0], GL_STATIC_DRAW);
-
+	
 
 	glGenBuffers(1, &IB);
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, IB);
 	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(unsigned int) * Indices.size(), &Indices[0], GL_STATIC_DRAW);
-
 
 	return true;
 }
@@ -189,10 +188,10 @@ bool Mesh::loadModelFromFile(const char* path) {
 				// update here for each mesh's vertices to assign position, normal, and texture coordinates
 				Vertices.push_back(Vertex(glm::vec3(mesh->mVertices[face.mIndices[k]].x, mesh->mVertices[face.mIndices[k]].y, mesh->mVertices[face.mIndices[k]].z),
 					mesh->HasNormals() ? glm::vec3(mesh->mNormals[face.mIndices[k]].x, mesh->mNormals[face.mIndices[k]].y, mesh->mNormals[face.mIndices[k]].z) :
-						glm::vec3(1.f, 1.f, 1.f),
+					glm::vec3(1.f, 1.f, 1.f),
 					mesh->HasTextureCoords(0) ? glm::vec2(mesh->mTextureCoords[0][face.mIndices[k]].x, mesh->mTextureCoords[0][face.mIndices[k]].y) :
 					glm::vec2(1.f, 1.f)));
-
+	
 			}
 
 		}

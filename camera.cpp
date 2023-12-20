@@ -63,3 +63,8 @@ void Camera::zoom(float fov) {
         100.0f); //Distance to the far plane, 
 
 }
+
+void Camera::PlanetaryObsMode(glm::vec3 pos, glm::vec3 front, glm::vec3 up) {
+    view = glm::lookAt(pos, front, up);
+
+}

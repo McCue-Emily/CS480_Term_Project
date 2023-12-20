@@ -3,8 +3,8 @@ C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\engine.c
 C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\engine.cpp(96,19): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
 C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\engine.cpp(97,13): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\engine.cpp(98,13): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\engine.cpp(172,23): warning C4244: 'return': conversion from 'double' to 'unsigned int', possible loss of data
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\engine.cpp(196,27): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\engine.cpp(186,23): warning C4244: 'return': conversion from 'double' to 'unsigned int', possible loss of data
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\engine.cpp(210,27): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
   graphics.cpp
 C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(157,12): warning C4305: 'initializing': truncation from 'double' to '_Ty'
 C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(157,12): warning C4305:         with

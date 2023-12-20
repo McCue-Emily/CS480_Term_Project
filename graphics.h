@@ -23,6 +23,7 @@ class Graphics
     Graphics();
     ~Graphics();
     bool Initialize(int width, int height);
+    bool observation_mode = 0;
     void HierarchicalUpdate2(double dt);
     void Render();
     void set_mode(bool b);
@@ -33,7 +34,6 @@ class Graphics
     std::string ErrorString(GLenum error);
 
     bool collectShPrLocs();
-    bool observation_mode = 0;
     void ComputeTransforms (double dt, std::vector<float> speed, std::vector<float> dist,
         std::vector<float> rotSpeed, glm::vec3 rotVector, std::vector<float> scale, 
         glm::mat4& tmat, glm::mat4& rmat, glm::mat4& smat);

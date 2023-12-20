@@ -18,7 +18,6 @@ class Engine
     bool Initialize();
     void Run();
     void ProcessInput();
-    void ProcessInputObservationMode();
     unsigned int getDT();
     long long GetCurrentTimeMillis();
     void Display(GLFWwindow*, double);
@@ -33,6 +32,7 @@ class Engine
     int m_WINDOW_HEIGHT;
     bool m_FULLSCREEN;
     bool observation_mode = 0;
+    bool key_hold = 0;
 
 
     Graphics* m_graphics;

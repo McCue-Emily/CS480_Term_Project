@@ -209,17 +209,6 @@ void Engine::ProcessInputObservationMode()
 
 }
 
-static void scroll_callback(GLFWwindow* window, double xoffset, double yoffset)
-{
-    fov -= (float)yoffset;
-    if (fov < 1.0f)
-        fov = 1.0f;
-    if (fov > 45.0f)
-        fov = 45.0f;
-
-    
-}
-
 void Engine::cursor_position_callback(GLFWwindow* window, double xpos, double ypos)
 {
  

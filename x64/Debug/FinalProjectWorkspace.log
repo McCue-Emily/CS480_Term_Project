@@ -1,7 +1,4 @@
-﻿  Texture.cpp
-  camera.cpp
-  engine.cpp
-  graphics.cpp
+﻿  engine.cpp
 C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\engine.cpp(102,19): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
 C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\engine.cpp(103,19): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
 C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\engine.cpp(104,13): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
@@ -10,12 +7,9 @@ C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\engine.c
 C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\engine.cpp(170,19): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
 C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\engine.cpp(171,13): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\engine.cpp(172,13): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\engine.cpp(237,23): warning C4244: 'return': conversion from 'double' to 'unsigned int', possible loss of data
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\engine.cpp(260,13): error C2084: function 'void scroll_callback(GLFWwindow *,double,double)' already has a body
-  C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\engine.cpp(212,13):
-  see previous definition of 'scroll_callback'
-  
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\engine.cpp(261,27): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\engine.cpp(226,23): warning C4244: 'return': conversion from 'double' to 'unsigned int', possible loss of data
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\engine.cpp(250,27): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+  graphics.cpp
 C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(148,21): warning C4305: 'initializing': truncation from 'double' to 'float'
 C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(167,15): warning C4305: 'initializing': truncation from 'double' to '_Ty'
 C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(167,15): warning C4305:         with
@@ -391,18 +385,8 @@ C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.3313
               _Fn=Graphics::HierarchicalUpdate2::<lambda_2>
           ]
   
-  main.cpp
-  mesh.cpp
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\mesh.cpp(102,43): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\mesh.cpp(138,43): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\mesh.cpp(181,20): warning C4018: '<': signed/unsigned mismatch
-  ring.cpp
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\ring.cpp(59,46): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\ring.cpp(100,46): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
-  shader.cpp
-  sphere.cpp
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\sphere.cpp(59,46): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\sphere.cpp(100,46): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
   window.cpp
   Generating Code...
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\mesh.cpp(203): warning C4715: 'Mesh::loadModelFromFile': not all control paths return a value
+soil2-debug.lib(SOIL2.obj) : warning LNK4099: PDB '' was not found with 'soil2-debug.lib(SOIL2.obj)' or at ''; linking object as if no debug info
+soil2-debug.lib(image_DXT.obj) : warning LNK4099: PDB '' was not found with 'soil2-debug.lib(image_DXT.obj)' or at ''; linking object as if no debug info
+  FinalProjectWorkspace.vcxproj -> C:\Users\jimmy\source\repos\FinalProjectWorkspace\x64\Debug\FinalProjectWorkspace.exe

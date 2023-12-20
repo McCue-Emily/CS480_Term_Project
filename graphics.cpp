@@ -146,6 +146,7 @@ bool Graphics::Initialize(int width, int height)
 void Graphics::HierarchicalUpdate2(double dt) {
 
 	float system_scale = 0.8;  // scales all the distance vectors down from their realistic values
+	float exoplanet_scale = 0.18;  // adjust the distance of the exoplanets and Neptune and Uranus from the sun
 
 	std::vector<float> speed, dist, rotSpeed, scale;
 	glm::vec3 rotVector;
@@ -179,8 +180,8 @@ void Graphics::HierarchicalUpdate2(double dt) {
 
 	// Venus
 	speed = { .1, 0.1, .1 };
-	dist = { 8. , 0., 8. };
-	transform(dist.begin(), dist.end(), dist.begin(), [system_scale](float& c) { return c * system_scale * 1.1; });
+	dist = { 8.8 , 0., 8.8 }; // originally 8., 0., 8. 
+	transform(dist.begin(), dist.end(), dist.begin(), [system_scale](float& c) { return c * system_scale; });
 	rotVector = { 0. , 1., 0. };
 	rotSpeed = { 0.005, 0.005, 0.005 };
 	scale = { .5f,.5f,.5f };
@@ -215,7 +216,7 @@ void Graphics::HierarchicalUpdate2(double dt) {
 	// position of the moon
 	speed = { 0.3, 0.3, 0.3 };
 	dist = { 1.25, .50, 1.25 };
-	transform(dist.begin(), dist.end(), dist.begin(), [system_scale](float& c) { return c * system_scale * 0.1; });
+	//transform(dist.begin(), dist.end(), dist.begin(), [system_scale](float& c) { return c * system_scale; });
 	rotVector = { 1.,1.,1. };
 	rotSpeed = { .025, .025, .025 };
 	scale = { .20f, .20f, .20f };
@@ -327,7 +328,7 @@ void Graphics::HierarchicalUpdate2(double dt) {
 	// Uranus
 	speed = { .03, .03, .03 };
 	dist = { 203. , 0., 203. };
-	transform(dist.begin(), dist.end(), dist.begin(), [system_scale](float& c) { return c * system_scale * 0.18; });
+	transform(dist.begin(), dist.end(), dist.begin(), [system_scale, exoplanet_scale](float& c) { return c * system_scale * exoplanet_scale; });
 	rotVector = { 0. , 1., 0. };
 	rotSpeed = { .15, .15, .15 };
 	scale = { .75,.75,.75 };
@@ -345,7 +346,7 @@ void Graphics::HierarchicalUpdate2(double dt) {
 	// Neptune
 	speed = { .02, .02, .02 };
 	dist = { 323. , 0., 323. };
-	transform(dist.begin(), dist.end(), dist.begin(), [system_scale](float& c) { return c * system_scale * 0.18; });
+	transform(dist.begin(), dist.end(), dist.begin(), [system_scale, exoplanet_scale](float& c) { return c * system_scale * exoplanet_scale; });
 	rotVector = { 0. , 1., 0. };
 	rotSpeed = { .14, .14, .14 };
 	scale = { .75,.75,.75 };
@@ -363,7 +364,7 @@ void Graphics::HierarchicalUpdate2(double dt) {
 	// Haumea - Asteroid
 	speed = { .075, .075, .075 };
 	dist = { 350. , 0., 350. };  // todo
-	transform(dist.begin(), dist.end(), dist.begin(), [system_scale](float& c) { return c * system_scale * 0.18; });
+	transform(dist.begin(), dist.end(), dist.begin(), [system_scale, exoplanet_scale](float& c) { return c * system_scale * exoplanet_scale; });
 	rotVector = { 0. , 1., 0. };
 	rotSpeed = { .1, .1, .1 };
 	scale = { .75,.75,.75 };
@@ -382,7 +383,7 @@ void Graphics::HierarchicalUpdate2(double dt) {
 	// Eris - Asteroid
 	speed = { .075, .075, .075 };
 	dist = { 400. , 0., 400. };  // todo
-	transform(dist.begin(), dist.end(), dist.begin(), [system_scale](float& c) { return c * system_scale * 0.18; });
+	transform(dist.begin(), dist.end(), dist.begin(), [system_scale, exoplanet_scale](float& c) { return c * system_scale * exoplanet_scale; });
 	rotVector = { 0. , 1., 0. };
 	rotSpeed = { .1, .1, .1 };
 	scale = { .75,.75,.75 };

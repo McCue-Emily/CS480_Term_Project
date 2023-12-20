@@ -5,17 +5,6 @@ Texture::Texture(const char* fileName) {
 	initializeTexture();
 }
 
-//Texture::Texture(const char* right,
-//	const char* left,
-//	const char* top,
-//	const char* bottom,
-//	const char* front,
-//	const char* back) {
-//
-//	loadCubeTexture(right, left, top, bottom, front, back);
-//	initializeCubeTexture();
-//}
-
 Texture::Texture() {
 	m_TextureID = -1;
 	printf("No Texture Data Provided.");
@@ -31,23 +20,6 @@ bool Texture::loadTexture(const char* texFile) {
 	return true;
 }
 
-//bool Texture::loadCubeTexture(const char* right,
-//	const char* left,
-//	const char* top,
-//	const char* bottom,
-//	const char* front,
-//	const char* back) {
-//
-//	m_cubeTextureID = SOIL_load_OGL_cubemap(right, left, top, bottom, front, back, SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_INVERT_Y);
-//
-//	if (!m_cubeTextureID) {
-//		printf("Failed: Could not open texture file!\n");
-//		return false;
-//	}
-//
-//	return true;
-//}
-
 bool Texture::initializeTexture() {
 
 	glGenerateMipmap(GL_TEXTURE_2D);
@@ -58,6 +30,3 @@ bool Texture::initializeTexture() {
 	
 	return true;
 }
-
-
-

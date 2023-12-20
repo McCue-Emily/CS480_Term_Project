@@ -118,7 +118,7 @@ bool Graphics::Initialize(int width, int height)
 	m_sphere9 = new Sphere(48, "assets\\Saturn.jpg");
 
 	// Saturn's Rings
-	m_ring = new Sphere(48, "assets\\Saturn_ring.png");
+	m_ring = new Ring(48, "assets\\Saturn_ring.png");
 
 	// Uranus
 	m_sphere10 = new Sphere(48, "assets\\Uranus.jpg");
@@ -146,7 +146,7 @@ bool Graphics::Initialize(int width, int height)
 void Graphics::HierarchicalUpdate2(double dt) {
 
 	float system_scale = 0.8;  // scales all the distance vectors down from their realistic values
-	float exoplanet_scale = 0.18;  // adjust the distance of the exoplanets and Neptune and Uranus from the sun
+	float exoplanet_scale = 0.2;  // adjust the distance of the exoplanets and Neptune and Uranus from the sun
 
 	std::vector<float> speed, dist, rotSpeed, scale;
 	glm::vec3 rotVector;
@@ -216,7 +216,7 @@ void Graphics::HierarchicalUpdate2(double dt) {
 	// position of the moon
 	speed = { 0.3, 0.3, 0.3 };
 	dist = { 1.25, .50, 1.25 };
-	//transform(dist.begin(), dist.end(), dist.begin(), [system_scale](float& c) { return c * system_scale; });
+	// transform(dist.begin(), dist.end(), dist.begin(), [system_scale](float& c) { return c * system_scale; });
 	rotVector = { 1.,1.,1. };
 	rotSpeed = { .025, .025, .025 };
 	scale = { .20f, .20f, .20f };
@@ -252,7 +252,7 @@ void Graphics::HierarchicalUpdate2(double dt) {
 
 	// Ceres - Asteroid
 	speed = { .075, .075, .075 };
-	dist = { 4. , 0., 4. };  // todo could be more realistic
+	dist = { 40. , 0., 40. };  // todo could be more realistic
 	transform(dist.begin(), dist.end(), dist.begin(), [system_scale](float& c) { return c * system_scale; });
 	rotVector = { 0. , 1., 0. };
 	rotSpeed = { .1, .1, .1 };
@@ -305,10 +305,10 @@ void Graphics::HierarchicalUpdate2(double dt) {
 
 	
 	// Saturn's Rings
-	/*
-	speed = { 3, 3, 3 };
+
+	speed = { 0.3, 0.3, 0.3 };
 	dist = { 1.25, .50, 1.25 };  // todo I think this probably has to be 0'd out, but I'm leaving it like this to see Saturn's rings orbit in a funny way
-	transform(dist.begin(), dist.end(), dist.begin(), [system_scale](float& c) { return c * system_scale; });
+	// transform(dist.begin(), dist.end(), dist.begin(), [system_scale](float& c) { return c * system_scale; });
 	rotVector = { 1.,1.,1. };
 	rotSpeed = { .25, .25, .25 };
 	scale = { 1.f, 1.f, 1.f };  // todo adjust
@@ -322,7 +322,6 @@ void Graphics::HierarchicalUpdate2(double dt) {
 		m_sphere3->Update(localTransform);
 
 	modelStack.pop();	// Saturn's Rings
-	*/
 	modelStack.pop();	// Saturn
 
 	// Uranus
@@ -624,6 +623,22 @@ void Graphics::Render()
 			}
 			glUniform1i(sampler, 0);
 			m_sphere9->Render(m_positionAttrib, m_colorAttrib, m_tcAttrib, m_hasTexture);
+		}
+	}
+
+	// Saturn's Rings
+	if (m_ring != NULL) {
+		glUniformMatrix4fv(m_modelMatrix, 1, GL_FALSE, glm::value_ptr(m_ring->GetModel()));
+		if (m_ring->hasTex) {
+			glActiveTexture(GL_TEXTURE0);
+			glBindTexture(GL_TEXTURE_2D, m_ring->getTextureID());
+			GLuint sampler = m_shader->GetUniformLocation("sp");
+			if (sampler == INVALID_UNIFORM_LOCATION)
+			{
+				printf("Sampler Not found not found\n");
+			}
+			glUniform1i(sampler, 0);
+			m_ring->Render(m_positionAttrib, m_colorAttrib, m_tcAttrib, m_hasTexture);
 		}
 	}
 

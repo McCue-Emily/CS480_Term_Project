@@ -13,8 +13,9 @@ class Camera
     glm::mat4 GetView();
 
     void updateView(glm::vec3 cameraFront);
-    void cameraPosVert(float speed);
+    void cameraPosDepth(float speed);
     void cameraPosHorz(float speed);
+    void cameraPosVert(float speed);
     void zoom(float fov);
 
     void PlanetaryObsMode(glm::vec3 pos, glm::vec3 front, glm::vec3 up);

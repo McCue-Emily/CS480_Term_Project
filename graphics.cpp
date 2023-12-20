@@ -145,8 +145,9 @@ bool Graphics::Initialize(int width, int height)
 
 void Graphics::HierarchicalUpdate2(double dt) {
 
-	float system_scale = 0.8;  // scales all the distance vectors down from their realistic values
-	float exoplanet_scale = 0.2;  // adjust the distance of the exoplanets and Neptune and Uranus from the sun
+	float system_distances_scale = 0.4;  // scales all the distance vectors down from their realistic values
+	float exoplanet_distances_scale = 0.18;  // adjust the distance of the exoplanets and Neptune from the sun
+	float orbiter_scale = 0.5;  // scale the sizes of all the moons, planets, asteroids, and spaceships
 
 	std::vector<float> speed, dist, rotSpeed, scale;
 	glm::vec3 rotVector;
@@ -163,10 +164,11 @@ void Graphics::HierarchicalUpdate2(double dt) {
 	// Mercury
 	speed = { 0.25, 0.25, 0.25 };
 	dist = { 3. , 0., 3. };
-	transform(dist.begin(), dist.end(), dist.begin(), [system_scale](float& c) { return c * system_scale; });
+	transform(dist.begin(), dist.end(), dist.begin(), [system_distances_scale](float& c) { return c * system_distances_scale * 1.8; });
 	rotVector = { 0. , .98, 0. };
 	rotSpeed = { 0.01, 0.01, 0.01 };
 	scale = { .75,.75,.75 };
+	transform(scale.begin(), scale.end(), scale.begin(), [orbiter_scale](float& c) { return c * orbiter_scale; });
 	localTransform = modelStack.top();				// start with sun's coordinate
 	localTransform *= glm::translate(glm::mat4(1.f),
 		glm::vec3(cos(speed[0] * dt) * dist[0], sin(speed[1] * dt) * dist[1], sin(speed[2] * dt) * dist[2]));
@@ -181,10 +183,11 @@ void Graphics::HierarchicalUpdate2(double dt) {
 	// Venus
 	speed = { .1, 0.1, .1 };
 	dist = { 8.8 , 0., 8.8 }; // originally 8., 0., 8. 
-	transform(dist.begin(), dist.end(), dist.begin(), [system_scale](float& c) { return c * system_scale; });
+	transform(dist.begin(), dist.end(), dist.begin(), [system_distances_scale](float& c) { return c * system_distances_scale; });
 	rotVector = { 0. , 1., 0. };
 	rotSpeed = { 0.005, 0.005, 0.005 };
 	scale = { .5f,.5f,.5f };
+	transform(scale.begin(), scale.end(), scale.begin(), [orbiter_scale](float& c) { return c * orbiter_scale; });
 	localTransform = modelStack.top();				// start with sun's coordinate
 	localTransform *= glm::translate(glm::mat4(1.f),
 		glm::vec3(cos(speed[0] * dt) * dist[0], sin(speed[1] * dt) * dist[1], sin(speed[2] * dt) * dist[2]));
@@ -200,10 +203,11 @@ void Graphics::HierarchicalUpdate2(double dt) {
 	// position of the Earth
 	speed = { .075, .075, .075 };
 	dist = { 15. , 0., 15.};
-	transform(dist.begin(), dist.end(), dist.begin(), [system_scale](float& c) { return c * system_scale; });
+	transform(dist.begin(), dist.end(), dist.begin(), [system_distances_scale](float& c) { return c * system_distances_scale; });
 	rotVector = { 0. , 1., 0. };
 	rotSpeed = { 0.1, .1, .1 };
 	scale = { .75,.75,.75 };
+	transform(scale.begin(), scale.end(), scale.begin(), [orbiter_scale](float& c) { return c * orbiter_scale; });
 	localTransform = modelStack.top();				// start with sun's coordinate
 	localTransform *= glm::translate(glm::mat4(1.f),
 		glm::vec3(cos(speed[0] * dt) * dist[0], sin(speed[1] * dt) * dist[1], sin(speed[2] * dt) * dist[2]));
@@ -216,10 +220,11 @@ void Graphics::HierarchicalUpdate2(double dt) {
 	// position of the moon
 	speed = { 0.3, 0.3, 0.3 };
 	dist = { 1.25, .50, 1.25 };
-	// transform(dist.begin(), dist.end(), dist.begin(), [system_scale](float& c) { return c * system_scale; });
+	// transform(dist.begin(), dist.end(), dist.begin(), [system_distances_scale](float& c) { return c * system_distances_scale; });
 	rotVector = { 1.,1.,1. };
 	rotSpeed = { .025, .025, .025 };
 	scale = { .20f, .20f, .20f };
+	transform(scale.begin(), scale.end(), scale.begin(), [orbiter_scale](float& c) { return c * orbiter_scale; });
 	localTransform = modelStack.top();
 	localTransform *= glm::translate(glm::mat4(1.f),
 		glm::vec3(cos(speed[0] * dt) * dist[0], sin(speed[1] * dt) * dist[1], sin(speed[2] * dt) * dist[2]));
@@ -235,10 +240,11 @@ void Graphics::HierarchicalUpdate2(double dt) {
 	// Mars
 	speed = { .070, .070, .070 };
 	dist = { 23. , 0., 23. };
-	transform(dist.begin(), dist.end(), dist.begin(), [system_scale](float& c) { return c * system_scale; });
+	transform(dist.begin(), dist.end(), dist.begin(), [system_distances_scale](float& c) { return c * system_distances_scale; });
 	rotVector = { 0. , 1., 0. };
 	rotSpeed = { .11, .11, .11 };
 	scale = { .75,.75,.75 };
+	transform(scale.begin(), scale.end(), scale.begin(), [orbiter_scale](float& c) { return c * orbiter_scale; });
 	localTransform = modelStack.top();				// start with sun's coordinate
 	localTransform *= glm::translate(glm::mat4(1.f),
 		glm::vec3(cos(speed[0] * dt) * dist[0], sin(speed[1] * dt) * dist[1], sin(speed[2] * dt) * dist[2]));
@@ -253,10 +259,11 @@ void Graphics::HierarchicalUpdate2(double dt) {
 	// Ceres - Asteroid
 	speed = { .075, .075, .075 };
 	dist = { 40. , 0., 40. };  // todo could be more realistic
-	transform(dist.begin(), dist.end(), dist.begin(), [system_scale](float& c) { return c * system_scale; });
+	transform(dist.begin(), dist.end(), dist.begin(), [system_distances_scale](float& c) { return c * system_distances_scale; });
 	rotVector = { 0. , 1., 0. };
 	rotSpeed = { .1, .1, .1 };
 	scale = { .75,.75,.75 };
+	transform(scale.begin(), scale.end(), scale.begin(), [orbiter_scale](float& c) { return c * orbiter_scale; });
 	localTransform = modelStack.top();				// start with sun's coordinate
 	localTransform *= glm::translate(glm::mat4(1.f),
 		glm::vec3(cos(speed[0] * dt) * dist[0], sin(speed[1] * dt) * dist[1], sin(speed[2] * dt) * dist[2]));
@@ -272,10 +279,11 @@ void Graphics::HierarchicalUpdate2(double dt) {
 	// Jupiter
 	speed = { .05, .05, .05 };
 	dist = { 60. , 0., 76. };
-	transform(dist.begin(), dist.end(), dist.begin(), [system_scale](float& c) { return c * system_scale * 0.5; });
+	transform(dist.begin(), dist.end(), dist.begin(), [system_distances_scale](float& c) { return c * system_distances_scale * 0.5; });
 	rotVector = { 0. , 1., 0. };
 	rotSpeed = { .2, .2, .2 };
 	scale = { .75,.75,.75 };
+	transform(scale.begin(), scale.end(), scale.begin(), [orbiter_scale](float& c) { return c * orbiter_scale; });
 	localTransform = modelStack.top();				// start with sun's coordinate
 	localTransform *= glm::translate(glm::mat4(1.f),
 		glm::vec3(cos(speed[0] * dt) * dist[0], sin(speed[1] * dt) * dist[1], sin(speed[2] * dt) * dist[2]));
@@ -290,10 +298,11 @@ void Graphics::HierarchicalUpdate2(double dt) {
 	// Saturn
 	speed = { .04, .04, .04 };
 	dist = { 83. , 0., 83. };
-	transform(dist.begin(), dist.end(), dist.begin(), [system_scale](float& c) { return c * system_scale * 0.5; });
+	transform(dist.begin(), dist.end(), dist.begin(), [system_distances_scale](float& c) { return c * system_distances_scale * 0.5; });
 	rotVector = { 0. , 1., 0. };
 	rotSpeed = { .19, .19, .19 };
 	scale = { .75,.75,.75 };
+	transform(scale.begin(), scale.end(), scale.begin(), [orbiter_scale](float& c) { return c * orbiter_scale; });
 	localTransform = modelStack.top();				// start with sun's coordinate
 	localTransform *= glm::translate(glm::mat4(1.f),
 		glm::vec3(cos(speed[0] * dt) * dist[0], sin(speed[1] * dt) * dist[1], sin(speed[2] * dt) * dist[2]));
@@ -308,10 +317,11 @@ void Graphics::HierarchicalUpdate2(double dt) {
 
 	speed = { 0.3, 0.3, 0.3 };
 	dist = { 1.25, .50, 1.25 };  // todo I think this probably has to be 0'd out, but I'm leaving it like this to see Saturn's rings orbit in a funny way
-	// transform(dist.begin(), dist.end(), dist.begin(), [system_scale](float& c) { return c * system_scale; });
+	// transform(dist.begin(), dist.end(), dist.begin(), [system_distances_scale](float& c) { return c * system_distances_scale; });
 	rotVector = { 1.,1.,1. };
 	rotSpeed = { .25, .25, .25 };
 	scale = { 1.f, 1.f, 1.f };  // todo adjust
+	transform(scale.begin(), scale.end(), scale.begin(), [orbiter_scale](float& c) { return c * orbiter_scale; });
 	localTransform = modelStack.top();
 	localTransform *= glm::translate(glm::mat4(1.f),
 		glm::vec3(cos(speed[0] * dt) * dist[0], sin(speed[1] * dt) * dist[1], sin(speed[2] * dt) * dist[2]));
@@ -327,10 +337,11 @@ void Graphics::HierarchicalUpdate2(double dt) {
 	// Uranus
 	speed = { .03, .03, .03 };
 	dist = { 203. , 0., 203. };
-	transform(dist.begin(), dist.end(), dist.begin(), [system_scale, exoplanet_scale](float& c) { return c * system_scale * exoplanet_scale; });
+	transform(dist.begin(), dist.end(), dist.begin(), [system_distances_scale, exoplanet_distances_scale](float& c) { return c * system_distances_scale * 0.25; });
 	rotVector = { 0. , 1., 0. };
 	rotSpeed = { .15, .15, .15 };
 	scale = { .75,.75,.75 };
+	transform(scale.begin(), scale.end(), scale.begin(), [orbiter_scale](float& c) { return c * orbiter_scale; });
 	localTransform = modelStack.top();				// start with sun's coordinate
 	localTransform *= glm::translate(glm::mat4(1.f),
 		glm::vec3(cos(speed[0] * dt) * dist[0], sin(speed[1] * dt) * dist[1], sin(speed[2] * dt) * dist[2]));
@@ -345,10 +356,11 @@ void Graphics::HierarchicalUpdate2(double dt) {
 	// Neptune
 	speed = { .02, .02, .02 };
 	dist = { 323. , 0., 323. };
-	transform(dist.begin(), dist.end(), dist.begin(), [system_scale, exoplanet_scale](float& c) { return c * system_scale * exoplanet_scale; });
+	transform(dist.begin(), dist.end(), dist.begin(), [system_distances_scale, exoplanet_distances_scale](float& c) { return c * system_distances_scale * exoplanet_distances_scale; });
 	rotVector = { 0. , 1., 0. };
 	rotSpeed = { .14, .14, .14 };
 	scale = { .75,.75,.75 };
+	transform(scale.begin(), scale.end(), scale.begin(), [orbiter_scale](float& c) { return c * orbiter_scale; });
 	localTransform = modelStack.top();				// start with sun's coordinate
 	localTransform *= glm::translate(glm::mat4(1.f),
 		glm::vec3(cos(speed[0] * dt) * dist[0], sin(speed[1] * dt) * dist[1], sin(speed[2] * dt) * dist[2]));
@@ -363,10 +375,11 @@ void Graphics::HierarchicalUpdate2(double dt) {
 	// Haumea - Asteroid
 	speed = { .075, .075, .075 };
 	dist = { 350. , 0., 350. };  // todo
-	transform(dist.begin(), dist.end(), dist.begin(), [system_scale, exoplanet_scale](float& c) { return c * system_scale * exoplanet_scale; });
+	transform(dist.begin(), dist.end(), dist.begin(), [system_distances_scale, exoplanet_distances_scale](float& c) { return c * system_distances_scale * exoplanet_distances_scale; });
 	rotVector = { 0. , 1., 0. };
 	rotSpeed = { .1, .1, .1 };
 	scale = { .75,.75,.75 };
+	transform(scale.begin(), scale.end(), scale.begin(), [orbiter_scale](float& c) { return c * orbiter_scale; });
 	localTransform = modelStack.top();				// start with sun's coordinate
 	localTransform *= glm::translate(glm::mat4(1.f),
 		glm::vec3(cos(speed[0] * dt) * dist[0], sin(speed[1] * dt) * dist[1], sin(speed[2] * dt) * dist[2]));
@@ -382,10 +395,11 @@ void Graphics::HierarchicalUpdate2(double dt) {
 	// Eris - Asteroid
 	speed = { .075, .075, .075 };
 	dist = { 400. , 0., 400. };  // todo
-	transform(dist.begin(), dist.end(), dist.begin(), [system_scale, exoplanet_scale](float& c) { return c * system_scale * exoplanet_scale; });
+	transform(dist.begin(), dist.end(), dist.begin(), [system_distances_scale, exoplanet_distances_scale](float& c) { return c * system_distances_scale * exoplanet_distances_scale; });
 	rotVector = { 0. , 1., 0. };
 	rotSpeed = { .1, .1, .1 };
 	scale = { .75,.75,.75 };
+	transform(scale.begin(), scale.end(), scale.begin(), [orbiter_scale](float& c) { return c * orbiter_scale; });
 	localTransform = modelStack.top();				// start with sun's coordinate
 	localTransform *= glm::translate(glm::mat4(1.f),
 		glm::vec3(cos(speed[0] * dt) * dist[0], sin(speed[1] * dt) * dist[1], sin(speed[2] * dt) * dist[2]));
@@ -400,10 +414,11 @@ void Graphics::HierarchicalUpdate2(double dt) {
 	// Starship
 	speed = { 1, 1., 1. };
 	dist = { 0, 6., 6. };
-	transform(dist.begin(), dist.end(), dist.begin(), [system_scale](float& c) { return c * system_scale; });
+	transform(dist.begin(), dist.end(), dist.begin(), [system_distances_scale](float& c) { return c * system_distances_scale; });
 	rotVector = { 1 , 0, 0 };
 	rotSpeed = { 1, 1, 1. };
 	scale = { .02,.02,.02 };
+	transform(scale.begin(), scale.end(), scale.begin(), [orbiter_scale](float& c) { return c * orbiter_scale; });
 	localTransform = modelStack.top();	
 	localTransform *= glm::translate(glm::mat4(1.f),
 		glm::vec3(sin(speed[0] * dt) * dist[0], cos(speed[1] * dt) * dist[1], sin(speed[2] * dt) * dist[2]));

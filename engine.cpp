@@ -201,9 +201,15 @@ void Engine::ProcessInputObservationMode()
         m_graphics->getCamera()->cameraPosHorz(-0.5f);
     // Zoom in
     if (glfwGetKey(m_window->getWindow(), GLFW_KEY_W) == GLFW_PRESS)
-        m_graphics->getCamera()->cameraPosVert(0.5f);
+        m_graphics->getCamera()->cameraPosDepth(0.5f);
     // Zoom out
     if (glfwGetKey(m_window->getWindow(), GLFW_KEY_S) == GLFW_PRESS)
+        m_graphics->getCamera()->cameraPosDepth(-0.5f);
+    // Move up
+    if (glfwGetKey(m_window->getWindow(), GLFW_KEY_SPACE) == GLFW_PRESS)
+        m_graphics->getCamera()->cameraPosVert(-0.5f);
+    // Move down
+    if (glfwGetKey(m_window->getWindow(), GLFW_KEY_LEFT_SHIFT) == GLFW_PRESS)
         m_graphics->getCamera()->cameraPosVert(-0.5f);
 
 

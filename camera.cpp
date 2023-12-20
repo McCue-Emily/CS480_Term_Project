@@ -56,7 +56,6 @@ void Camera::updateView(glm::vec3 cameraUpdate) {
 }
 
 void Camera::cameraPosVert(float speed) {
-    //cameraPos += speed * cameraUp;
     cameraPos += speed * cameraFront;
     view = glm::lookAt(cameraPos, cameraFront + cameraPos, cameraUp);
 }
@@ -77,5 +76,13 @@ void Camera::zoom(float fov) {
 
 void Camera::PlanetaryObsMode(glm::vec3 pos, glm::vec3 front, glm::vec3 up) {
     view = glm::lookAt(pos, front, up);
+}
 
+void Camera::PlanetaryObsMode(glm::vec3 pos) {  // todo make camera look at planet
+    view = glm::lookAt(pos, cameraFront, cameraUp);
+}
+
+void Camera::Rotate(float angle, glm::vec3 axes) {
+    cameraFront = glm::rotate(cameraFront, angle, axes);
+    view = glm::lookAt(cameraPos, cameraFront + cameraPos, cameraUp);
 }

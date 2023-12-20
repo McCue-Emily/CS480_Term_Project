@@ -20,6 +20,8 @@ class Camera
     void zoom(float fov);
 
     void PlanetaryObsMode(glm::vec3 pos, glm::vec3 front, glm::vec3 up);
+    void PlanetaryObsMode(glm::vec3 pos);
+    void Rotate(float angle, glm::vec3 axes);
   
   private:
     glm::vec3 cameraPos = glm::vec3(0.0f, 0.0f, 20.0f);

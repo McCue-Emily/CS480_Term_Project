@@ -145,9 +145,15 @@ void Engine::ProcessInput()
     }
     else {
 
-        // If 'P' is selected, enter planetary observation mode on the next loop in Run()
-        if (glfwGetKey(m_window->getWindow(), GLFW_KEY_P) == GLFW_PRESS)
-            observation_mode = !observation_mode;
+        //  If 'p' is selected, enter planetary observation mode on the next loop in Run()
+        if (glfwGetKey(m_window->getWindow(), GLFW_KEY_P) == GLFW_PRESS) {
+            if (!key_hold)
+                observation_mode = !observation_mode;
+            key_hold = 1;
+        }
+        if (glfwGetKey(m_window->getWindow(), GLFW_KEY_P) == GLFW_RELEASE) {
+            key_hold = 0;
+        }
 
         // Move right
         if (glfwGetKey(m_window->getWindow(), GLFW_KEY_D) == GLFW_PRESS)

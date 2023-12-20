@@ -1,15 +1,4 @@
-﻿  engine.cpp
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\engine.cpp(102,19): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\engine.cpp(103,19): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\engine.cpp(104,13): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\engine.cpp(105,13): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\engine.cpp(169,19): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\engine.cpp(170,19): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\engine.cpp(171,13): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\engine.cpp(172,13): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\engine.cpp(226,23): warning C4244: 'return': conversion from 'double' to 'unsigned int', possible loss of data
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\engine.cpp(250,27): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
-  graphics.cpp
+﻿  graphics.cpp
 C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(148,21): warning C4305: 'initializing': truncation from 'double' to 'float'
 C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(167,15): warning C4305: 'initializing': truncation from 'double' to '_Ty'
 C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(167,15): warning C4305:         with
@@ -385,8 +374,4 @@ C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.3313
               _Fn=Graphics::HierarchicalUpdate2::<lambda_2>
           ]
   
-  window.cpp
-  Generating Code...
-soil2-debug.lib(SOIL2.obj) : warning LNK4099: PDB '' was not found with 'soil2-debug.lib(SOIL2.obj)' or at ''; linking object as if no debug info
-soil2-debug.lib(image_DXT.obj) : warning LNK4099: PDB '' was not found with 'soil2-debug.lib(image_DXT.obj)' or at ''; linking object as if no debug info
   FinalProjectWorkspace.vcxproj -> C:\Users\jimmy\source\repos\FinalProjectWorkspace\x64\Debug\FinalProjectWorkspace.exe

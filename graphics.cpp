@@ -145,7 +145,7 @@ bool Graphics::Initialize(int width, int height)
 
 void Graphics::HierarchicalUpdate2(double dt) {
 
-	float system_scale = 0.7;  // scales all the distance vectors down from their realistic values
+	float system_scale = 0.8;  // scales all the distance vectors down from their realistic values
 
 	std::vector<float> speed, dist, rotSpeed, scale;
 	glm::vec3 rotVector;
@@ -215,7 +215,7 @@ void Graphics::HierarchicalUpdate2(double dt) {
 	// position of the moon
 	speed = { 0.3, 0.3, 0.3 };
 	dist = { 1.25, .50, 1.25 };
-	transform(dist.begin(), dist.end(), dist.begin(), [system_scale](float& c) { return c * system_scale * 0.5; });
+	transform(dist.begin(), dist.end(), dist.begin(), [system_scale](float& c) { return c * system_scale * 0.1; });
 	rotVector = { 1.,1.,1. };
 	rotSpeed = { .025, .025, .025 };
 	scale = { .20f, .20f, .20f };
@@ -252,7 +252,7 @@ void Graphics::HierarchicalUpdate2(double dt) {
 
 	// Jupiter
 	speed = { .05, .05, .05 };
-	dist = { 60. , 0., 760. };
+	dist = { 60. , 0., 76. };
 	transform(dist.begin(), dist.end(), dist.begin(), [system_scale](float& c) { return c * system_scale * 0.5; });
 	rotVector = { 0. , 1., 0. };
 	rotSpeed = { .2, .2, .2 };
@@ -308,7 +308,7 @@ void Graphics::HierarchicalUpdate2(double dt) {
 	// Uranus
 	speed = { .03, .03, .03 };
 	dist = { 203. , 0., 203. };
-	transform(dist.begin(), dist.end(), dist.begin(), [system_scale](float& c) { return c * system_scale * 0.2; });
+	transform(dist.begin(), dist.end(), dist.begin(), [system_scale](float& c) { return c * system_scale * 0.18; });
 	rotVector = { 0. , 1., 0. };
 	rotSpeed = { .15, .15, .15 };
 	scale = { .75,.75,.75 };
@@ -326,7 +326,7 @@ void Graphics::HierarchicalUpdate2(double dt) {
 	// Neptune
 	speed = { .02, .02, .02 };
 	dist = { 323. , 0., 323. };
-	transform(dist.begin(), dist.end(), dist.begin(), [system_scale](float& c) { return c * system_scale * 0.2; });
+	transform(dist.begin(), dist.end(), dist.begin(), [system_scale](float& c) { return c * system_scale * 0.18; });
 	rotVector = { 0. , 1., 0. };
 	rotSpeed = { .14, .14, .14 };
 	scale = { .75,.75,.75 };

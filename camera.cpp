@@ -40,27 +40,9 @@ glm::mat4 Camera::GetView()
 }
 
 void Camera::updateView(glm::vec3 cameraUpdate) {
-
     cameraFront = cameraUpdate;
     view = glm::lookAt(cameraPos, cameraFront + cameraPos, cameraUp);
 }
-/*
-void Camera::cameraPosDepth(float speed) {
-    cameraPos += speed * cameraFront;
-    view = glm::lookAt(cameraPos, cameraFront + cameraPos, cameraUp);
-}
-
-void Camera::cameraPosHorz(float speed) {
-    cameraPos += glm::normalize(glm::cross(cameraFront, cameraUp)) * speed;
-    view = glm::lookAt(cameraPos, cameraFront + cameraPos, cameraUp);
-}
-
-void Camera::cameraPosVert(float speed) {
-    cameraPos += speed * cameraUp;
-    //cameraPos += glm::normalize(glm::cross(cameraFront, cameraUp)) * speed;
-    view = glm::lookAt(cameraPos, cameraFront, cameraUp + cameraPos);
-}
-*/
 
 void Camera::cameraPosVert(float speed) {
     //cameraPos += speed * cameraUp;

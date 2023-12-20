@@ -130,6 +130,59 @@ bool Graphics::Initialize(int width, int height)
 	return true;
 }
 
+void Graphics::invert_mode(bool b) {
+	observation_mode = b;
+	if (b)
+		EnterObservational();
+	else
+		ExitObservational();
+}
+
+void Graphics::EnterObservational() {
+	backup_camera = m_camera;
+	// todo determine which planet is nearest
+	// todo maybe animate transition to observational mode
+}
+
+void Graphics::ObservationModeUpdate(double dt) {
+	float orbiter_scale = 0.5;  // scale the sizes of all the moons, planets, asteroids, and spaceships
+	int col;
+
+	std::vector<float> speed, dist, rotSpeed, scale;
+	glm::vec3 rotVector;
+	glm::mat4 localTransform;
+
+	// position of the camera
+	speed = { 0.3, 0.3, 0.3 };
+	dist = { 1.25, .50, 1.25 };
+	// transform(dist.begin(), dist.end(), dist.begin(), [system_distances_scale](float& c) { return c * system_distances_scale; });
+	rotVector = { 1.,1.,1. };
+	rotSpeed = { .0, .0, .0 };
+	scale = { .20f, .20f, .20f };
+	transform(scale.begin(), scale.end(), scale.begin(), [orbiter_scale](float& c) { return c * orbiter_scale; });
+	localTransform = modelStack.top();
+	localTransform *= glm::translate(glm::mat4(1.f),
+		glm::vec3(cos(speed[0] * dt) * dist[0], sin(speed[1] * dt) * dist[1], sin(speed[2] * dt) * dist[2]));
+	modelStack.push(localTransform);			// store moon-planet-sun coordinate
+	localTransform *= glm::rotate(glm::mat4(1.f), rotSpeed[0] * (float)dt, rotVector);
+	localTransform *= glm::scale(glm::vec3(scale[0], scale[1], scale[2]));
+	if (m_camera != NULL)
+		col = 0;
+		glm::vec3 pos = { localTransform[col].x, localTransform[col].y, localTransform[col].z };
+		col = 1;
+		glm::vec3 front = { localTransform[col].x, localTransform[col].y, localTransform[col].z };
+		col = 2;
+		glm::vec3 up = { localTransform[col].x, localTransform[col].y, localTransform[col].z };
+		m_camera->PlanetaryObsMode(pos, front, up);
+
+	modelStack.pop();	// Moon
+}
+
+void Graphics::ExitObservational() {
+	// = backup_camera;
+	// todo maybe animate transition out of observational mode
+}
+
 void Graphics::HierarchicalUpdate2(double dt) {
 
 	float system_distances_scale = 0.4;  // scales all the distance vectors down from their realistic values
@@ -183,6 +236,9 @@ void Graphics::HierarchicalUpdate2(double dt) {
 	localTransform *= glm::scale(glm::vec3(scale[0], scale[1], scale[2]));
 	if (m_sphere5 != NULL)
 		m_sphere5->Update(localTransform);
+
+	if (observation_mode)
+		ObservationModeUpdate(dt);
 
 	modelStack.pop();	// Venus
 

@@ -5,6 +5,17 @@ Camera::Camera()
 
 }
 
+Camera::Camera(Camera& sample) {
+    cameraPos = sample.cameraPos;
+    cameraFront = sample.cameraFront;
+    cameraUp = sample.cameraUp;
+    x = sample.x;
+    y = sample.y;
+    z = sample.z;
+    projection = sample.projection;
+    view = sample.view;
+}
+
 Camera::~Camera()
 {
 

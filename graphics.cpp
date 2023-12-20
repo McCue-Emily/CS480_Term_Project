@@ -130,12 +130,13 @@ bool Graphics::Initialize(int width, int height)
 	return true;
 }
 
-void Graphics::invert_mode(bool b) {
-	observation_mode = b;
-	if (b)
-		EnterObservational();
-	else
-		ExitObservational();
+void Graphics::set_mode(bool b) {
+	if (b != observation_mode)
+		observation_mode = b;
+		if (b)
+			EnterObservational();
+		else
+			ExitObservational();
 }
 
 void Graphics::EnterObservational() {
@@ -174,12 +175,12 @@ void Graphics::ObservationModeUpdate(double dt) {
 		col = 2;
 		glm::vec3 up = { localTransform[col].x, localTransform[col].y, localTransform[col].z };
 		m_camera->PlanetaryObsMode(pos, front, up);
-
-	modelStack.pop();	// Moon
+		m_camera->cameraPosVert(0.5f);
+	modelStack.pop();	// Camera
 }
 
 void Graphics::ExitObservational() {
-	// = backup_camera;
+	//m_camera = backup_camera;
 	// todo maybe animate transition out of observational mode
 }
 

@@ -25,7 +25,7 @@ class Graphics
     bool Initialize(int width, int height);
     void HierarchicalUpdate2(double dt);
     void Render();
-    void invert_mode(bool b);
+    void set_mode(bool b);
 
     Camera* getCamera() { return m_camera; }
 

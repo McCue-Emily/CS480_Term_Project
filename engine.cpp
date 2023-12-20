@@ -70,13 +70,7 @@ void Engine::Run()
 
     while (!glfwWindowShouldClose(m_window->getWindow()))
     {
-        if (observation_mode) {
-            ProcessInputObservationMode();
-        }
-        else {
-            ProcessInput();
-        }
-
+        ProcessInput();
         Display(m_window->getWindow(), glfwGetTime());
         glfwPollEvents();
 
@@ -125,92 +119,40 @@ void Engine::ProcessInput()
     m_graphics->getCamera()->zoom(fov);
 
     // If 'P' is selected, enter planetary observation mode on the next loop in Run()
-    if (glfwGetKey(m_window->getWindow(), GLFW_KEY_P) == GLFW_PRESS)
+    if (glfwGetKey(m_window->getWindow(), GLFW_KEY_P) == GLFW_PRESS) {
         observation_mode = !observation_mode;
-    if (glfwGetKey(m_window->getWindow(), GLFW_KEY_D) == GLFW_PRESS)
-        m_graphics->getCamera()->cameraPosHorz(0.5f);
-    if (glfwGetKey(m_window->getWindow(), GLFW_KEY_A) == GLFW_PRESS)
-        m_graphics->getCamera()->cameraPosHorz(-0.5f);
-    if (glfwGetKey(m_window->getWindow(), GLFW_KEY_W) == GLFW_PRESS)
-        m_graphics->getCamera()->cameraPosVert(0.5f);
-    if (glfwGetKey(m_window->getWindow(), GLFW_KEY_S) == GLFW_PRESS)
-        m_graphics->getCamera()->cameraPosVert(-0.5f);
+        //return;
+    }
+
+    if (!observation_mode) {
+        if (glfwGetKey(m_window->getWindow(), GLFW_KEY_D) == GLFW_PRESS)
+            m_graphics->getCamera()->cameraPosHorz(0.5f);
+        if (glfwGetKey(m_window->getWindow(), GLFW_KEY_A) == GLFW_PRESS)
+            m_graphics->getCamera()->cameraPosHorz(-0.5f);
+        if (glfwGetKey(m_window->getWindow(), GLFW_KEY_W) == GLFW_PRESS)
+            m_graphics->getCamera()->cameraPosVert(0.5f);
+        if (glfwGetKey(m_window->getWindow(), GLFW_KEY_S) == GLFW_PRESS)
+            m_graphics->getCamera()->cameraPosVert(-0.5f);
+    }
+    else {
+        // Move right
+        if (glfwGetKey(m_window->getWindow(), GLFW_KEY_D) == GLFW_PRESS)
+            m_graphics->getCamera()->cameraPosHorz(0.5f);
+        // Move left
+        if (glfwGetKey(m_window->getWindow(), GLFW_KEY_A) == GLFW_PRESS)
+            m_graphics->getCamera()->cameraPosHorz(-0.5f);
+        // Zoom in
+        /*
+        if (glfwGetKey(m_window->getWindow(), GLFW_KEY_W) == GLFW_PRESS)
+            m_graphics->getCamera()->cameraPosVert(0.5f);
+        // Zoom out
+        if (glfwGetKey(m_window->getWindow(), GLFW_KEY_S) == GLFW_PRESS)
+            m_graphics->getCamera()->cameraPosVert(-0.5f);
+            */
+    }
         
 
-    m_graphics->invert_mode(observation_mode);
-}
-
-void Engine::ProcessInputObservationMode()
-{
-
-    glm::vec3 resetCameraPos = glm::vec3(0.0f, 0.0f, 20.0f);
-    glm::vec3 resetCameraFront = glm::vec3(0.0, 1.0, 1.0);
-    glm::vec3 resetCameraUp = glm::vec3(0.0f, 1.0f, 0.0f);
-
-    m_graphics->getCamera()->PlanetaryObsMode(resetCameraPos, resetCameraFront, resetCameraUp);
-
-
-    // Move camera to look at planet
-    //m_planetObs->PlanetaryObsMode(resetCoords);
-
-    // Start processing input
-    if (glfwGetKey(m_window->getWindow(), GLFW_KEY_ESCAPE) == GLFW_PRESS)
-        glfwSetWindowShouldClose(m_window->getWindow(), true);
-
-    double xpos;
-    double ypos;
-
-    glfwSetInputMode(m_window->getWindow(), GLFW_CURSOR, GLFW_CURSOR_DISABLED);
-    glfwGetCursorPos(m_window->getWindow(), &xpos, &ypos);
-
-    float xoffset = xpos - lastX;
-    float yoffset = lastY - ypos; // reversed since y-coordinates range from bottom to top
-    lastX = xpos;
-    lastY = ypos;
-
-    const float sensitivity = 0.1f;
-    xoffset *= sensitivity;
-    yoffset *= sensitivity;
-    yaw += xoffset;
-    pitch += yoffset;
-
-    // make sure that when pitch is out of bounds, screen doesn't get flipped
-    if (pitch > 89.0f)
-        pitch = 89.0f;
-    if (pitch < -89.0f)
-        pitch = -89.0f;
-
-    // Moving head back and forth
-    glm::vec3 front;
-    front.x = cos(glm::radians(yaw)) * cos(glm::radians(pitch));
-    front.y = sin(glm::radians(pitch));
-    front.z = sin(glm::radians(yaw)) * cos(glm::radians(pitch));
-    glm::vec3 cameraFront = glm::normalize(front);
-
-    m_graphics->getCamera()->updateView(cameraFront);
-    m_graphics->getCamera()->zoom(fov);
-
-
-    // If 'P' is selected again, return to exploration mode
-    if (glfwGetKey(m_window->getWindow(), GLFW_KEY_P) == GLFW_PRESS)
-        observation_mode = !observation_mode;
-    // Move right
-    if (glfwGetKey(m_window->getWindow(), GLFW_KEY_D) == GLFW_PRESS)
-        m_graphics->getCamera()->cameraPosHorz(0.5f);
-    // Move left
-    if (glfwGetKey(m_window->getWindow(), GLFW_KEY_A) == GLFW_PRESS)
-        m_graphics->getCamera()->cameraPosHorz(-0.5f);
-    // Zoom in
-    /*
-    if (glfwGetKey(m_window->getWindow(), GLFW_KEY_W) == GLFW_PRESS)
-        m_graphics->getCamera()->cameraPosVert(0.5f);
-    // Zoom out
-    if (glfwGetKey(m_window->getWindow(), GLFW_KEY_S) == GLFW_PRESS)
-        m_graphics->getCamera()->cameraPosVert(-0.5f);
-        */
-
-
-    m_graphics->invert_mode(observation_mode);
+    m_graphics->set_mode(observation_mode);
 }
 
 void Engine::cursor_position_callback(GLFWwindow* window, double xpos, double ypos)

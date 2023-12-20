@@ -7,6 +7,7 @@ class Camera
 {
   public:
     Camera();
+    Camera(Camera& sample);
     ~Camera();
     bool Initialize(int w, int h);
     glm::mat4 GetProjection();
@@ -29,9 +30,6 @@ class Camera
     double z = -16.0;
     glm::mat4 projection;
     glm::mat4 view;
-
-    //glm::vec3 resetCoords = glm::vec3(0.0, 1.0, 1.0);
-
 };
 
 #endif /* CAMERA_H */

@@ -373,8 +373,8 @@ void Graphics::HierarchicalUpdate2(double dt) {
 	modelStack.push(localTransform);			// store moon-planet-sun coordinate
 	localTransform *= glm::rotate(glm::mat4(1.f), rotSpeed[0] * (float)dt, rotVector);
 	localTransform *= glm::scale(glm::vec3(scale[0], scale[1], scale[2]));
-	if (m_sphere3 != NULL)
-		m_sphere3->Update(localTransform);
+	if (m_ring != NULL)
+		m_ring->Update(localTransform);
 
 	modelStack.pop();	// Saturn's Rings
 	modelStack.pop();	// Saturn

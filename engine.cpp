@@ -163,7 +163,7 @@ void Engine::ProcessInput()
 
         // Move right
         if (glfwGetKey(m_window->getWindow(), GLFW_KEY_D) == GLFW_PRESS)
-            m_graphics->getCamera()->Rotate(1.0f, glm::vec3(0, 1, 0));
+            m_graphics->getCamera()->Rotate(1.0f, glm::vec3(0, 1, 0));  // the vec specifies that we will rotate in the y axis
         // Move left
         if (glfwGetKey(m_window->getWindow(), GLFW_KEY_A) == GLFW_PRESS)
             m_graphics->getCamera()->Rotate(-1.0f / 180.0f, glm::vec3(0, 1, 0));

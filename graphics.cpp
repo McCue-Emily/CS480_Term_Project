@@ -104,7 +104,7 @@ bool Graphics::Initialize(int width, int height)
 	m_sphere9 = new Sphere(48, "assets\\Saturn.jpg");
 
 	// Saturn's Rings
-	// todo m_ring = new Ring(48, "assets\\Saturn_ring.png");
+	m_ring = new Ring(48, "assets\\Saturn_ring.png");
 
 	// Uranus
 	m_sphere10 = new Sphere(48, "assets\\Uranus.jpg");
@@ -131,6 +131,8 @@ bool Graphics::Initialize(int width, int height)
 
 void Graphics::HierarchicalUpdate2(double dt) {
 
+	float system_scale = 0.7;  // scales all the distance vectors down from their realistic values
+
 	std::vector<float> speed, dist, rotSpeed, scale;
 	glm::vec3 rotVector;
 	glm::mat4 localTransform;
@@ -146,6 +148,7 @@ void Graphics::HierarchicalUpdate2(double dt) {
 	// Mercury
 	speed = { 1.25, 1.25, 1.25 };
 	dist = { 3. , 0., 3. };
+	transform(dist.begin(), dist.end(), dist.begin(), [system_scale](float& c) { return c * system_scale; });
 	rotVector = { 0. , .98, 0. };
 	rotSpeed = { 0.1, 0.1, 0.1 };
 	scale = { .75,.75,.75 };
@@ -163,6 +166,7 @@ void Graphics::HierarchicalUpdate2(double dt) {
 	// Venus
 	speed = { 1., 1., 1. };
 	dist = { 8. , 0., 8. };
+	transform(dist.begin(), dist.end(), dist.begin(), [system_scale](float& c) { return c * system_scale * 1.1; });
 	rotVector = { 0. , 1., 0. };
 	rotSpeed = { 0.05, 0.05, 0.05 };
 	scale = { .5f,.5f,.5f };
@@ -181,6 +185,7 @@ void Graphics::HierarchicalUpdate2(double dt) {
 	// position of the Earth
 	speed = { .75, .75, .75 };
 	dist = { 15. , 0., 15.};
+	transform(dist.begin(), dist.end(), dist.begin(), [system_scale](float& c) { return c * system_scale; });
 	rotVector = { 0. , 1., 0. };
 	rotSpeed = { 1., 1., 1. };
 	scale = { .75,.75,.75 };
@@ -196,6 +201,7 @@ void Graphics::HierarchicalUpdate2(double dt) {
 	// position of the moon
 	speed = { 3, 3, 3 };
 	dist = { 1.25, .50, 1.25 };
+	transform(dist.begin(), dist.end(), dist.begin(), [system_scale](float& c) { return c * system_scale * 0.5; });
 	rotVector = { 1.,1.,1. };
 	rotSpeed = { .25, .25, .25 };
 	scale = { .20f, .20f, .20f };
@@ -214,6 +220,7 @@ void Graphics::HierarchicalUpdate2(double dt) {
 	// Mars
 	speed = { .70, .70, .70 };
 	dist = { 23. , 0., 23. };
+	transform(dist.begin(), dist.end(), dist.begin(), [system_scale](float& c) { return c * system_scale; });
 	rotVector = { 0. , 1., 0. };
 	rotSpeed = { 1.1, 1.1, 1.1 };
 	scale = { .75,.75,.75 };
@@ -232,6 +239,7 @@ void Graphics::HierarchicalUpdate2(double dt) {
 	// Jupiter
 	speed = { .5, .5, .5 };
 	dist = { 60. , 0., 760. };
+	transform(dist.begin(), dist.end(), dist.begin(), [system_scale](float& c) { return c * system_scale * 0.5; });
 	rotVector = { 0. , 1., 0. };
 	rotSpeed = { 2., 2., 2. };
 	scale = { .75,.75,.75 };
@@ -249,6 +257,7 @@ void Graphics::HierarchicalUpdate2(double dt) {
 	// Saturn
 	speed = { .4, .4, .4 };
 	dist = { 83. , 0., 83. };
+	transform(dist.begin(), dist.end(), dist.begin(), [system_scale](float& c) { return c * system_scale; });
 	rotVector = { 0. , 1., 0. };
 	rotSpeed = { 1.9, 1.9, 1.9 };
 	scale = { .75,.75,.75 };
@@ -261,10 +270,11 @@ void Graphics::HierarchicalUpdate2(double dt) {
 	if (m_sphere9 != NULL)
 		m_sphere9->Update(localTransform);
 
-	/*
+	
 	// Saturn's Rings
 	speed = { 3, 3, 3 };
 	dist = { 1.25, .50, 1.25 };  // todo I think this probably has to be 0'd out, but I'm leaving it like this to see Saturn's rings orbit in a funny way
+	transform(dist.begin(), dist.end(), dist.begin(), [system_scale](float& c) { return c * system_scale; });
 	rotVector = { 1.,1.,1. };
 	rotSpeed = { .25, .25, .25 };
 	scale = { 1.f, 1.f, 1.f };  // todo adjust
@@ -278,13 +288,13 @@ void Graphics::HierarchicalUpdate2(double dt) {
 		m_sphere3->Update(localTransform);
 
 	modelStack.pop();	// Saturn's Rings
-	*/
 	modelStack.pop();	// Saturn
 
 
 	// Uranus
 	speed = { .3, .3, .3 };
 	dist = { 203. , 0., 203. };
+	transform(dist.begin(), dist.end(), dist.begin(), [system_scale](float& c) { return c * system_scale * 0.2; });
 	rotVector = { 0. , 1., 0. };
 	rotSpeed = { 1.5, 1.5, 1.5 };
 	scale = { .75,.75,.75 };
@@ -302,6 +312,7 @@ void Graphics::HierarchicalUpdate2(double dt) {
 	// Neptune
 	speed = { .2, .2, .2 };
 	dist = { 323. , 0., 323. };
+	transform(dist.begin(), dist.end(), dist.begin(), [system_scale](float& c) { return c * system_scale * 0.2; });
 	rotVector = { 0. , 1., 0. };
 	rotSpeed = { 1.4, 1.4, 1.4 };
 	scale = { .75,.75,.75 };
@@ -319,6 +330,7 @@ void Graphics::HierarchicalUpdate2(double dt) {
 	// Ceres - Asteroid
 	speed = { .75, .75, .75 };
 	dist = { 7. , 0., 7. };
+	transform(dist.begin(), dist.end(), dist.begin(), [system_scale](float& c) { return c * system_scale; });
 	rotVector = { 0. , 1., 0. };
 	rotSpeed = { 1., 1., 1. };
 	scale = { .75,.75,.75 };
@@ -337,6 +349,7 @@ void Graphics::HierarchicalUpdate2(double dt) {
 	// Eris - Asteroid
 	speed = { .75, .75, .75 };
 	dist = { 7. , 0., 7. };
+	transform(dist.begin(), dist.end(), dist.begin(), [system_scale](float& c) { return c * system_scale; });
 	rotVector = { 0. , 1., 0. };
 	rotSpeed = { 1., 1., 1. };
 	scale = { .75,.75,.75 };
@@ -354,6 +367,7 @@ void Graphics::HierarchicalUpdate2(double dt) {
 	// Haumea - Asteroid
 	speed = { .75, .75, .75 };
 	dist = { 7. , 0., 7. };
+	transform(dist.begin(), dist.end(), dist.begin(), [system_scale](float& c) { return c * system_scale; });
 	rotVector = { 0. , 1., 0. };
 	rotSpeed = { 1., 1., 1. };
 	scale = { .75,.75,.75 };
@@ -371,6 +385,7 @@ void Graphics::HierarchicalUpdate2(double dt) {
 	// Starship
 	speed = { 1, 1., 1. };
 	dist = { 0, 6., 6. };
+	transform(dist.begin(), dist.end(), dist.begin(), [system_scale](float& c) { return c * system_scale; });
 	rotVector = { 1 , 0, 0 };
 	rotSpeed = { 1, 1, 1. };
 	scale = { .02,.02,.02 };
@@ -385,7 +400,6 @@ void Graphics::HierarchicalUpdate2(double dt) {
 		m_mesh->Update(localTransform);
 
 	modelStack.pop(); 	// back to the planet coordinate
-
 	modelStack.pop(); 	// back to the sun coordinate
 
 	//modelStack.pop();	// empy stack

@@ -171,7 +171,7 @@ static void cursorPositionCallBack(GLFWwindow* window, double xpos, double ypos)
 }
 
 static void scroll_callback(GLFWwindow* window, double xoffset, double yoffset) {
-    fov -= (float)yoffset;
+    fov -= (float)yoffset * 2.0;
     if (fov < 1.0f)
         fov = 1.0f;
     if (fov > 45.0f)

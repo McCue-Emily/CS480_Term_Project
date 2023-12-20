@@ -70,8 +70,12 @@ void Engine::Run()
 
     while (!glfwWindowShouldClose(m_window->getWindow()))
     {
-
-        ProcessInput();
+        if (observation_mode) {
+            ProcessInputObservationMode();
+        }
+        else {
+            ProcessInput();
+        }
 
         Display(m_window->getWindow(), glfwGetTime());
         glfwPollEvents();
@@ -90,9 +94,9 @@ void Engine::ProcessInput()
     double xpos;
     double ypos;
 
-    // If 'P' is selected, enter planetary observation mode
+    // If 'P' is selected, enter planetary observation mode on the next loop in Run()
     if (glfwGetKey(m_window->getWindow(), GLFW_KEY_P) == GLFW_PRESS) {
-        ProcessInputObservationMode();
+        observation_mode = !observation_mode;
     }
 
     // Else continue
@@ -150,10 +154,9 @@ void Engine::ProcessInputObservationMode()
     // Move camera to look at planet
     //m_planetObs->PlanetaryObsMode(resetCoords);
 
-    // If 'P' is selected again, return
+    // If 'P' is selected again, return to exploration mode
     if (glfwGetKey(m_window->getWindow(), GLFW_KEY_P) == GLFW_PRESS) {
-        // Return
-        return;
+        observation_mode = !observation_mode;
     }
 
     // Start processing input
@@ -193,6 +196,8 @@ void Engine::ProcessInputObservationMode()
     m_graphics->getCamera()->updateView(cameraFront);
     m_graphics->getCamera()->zoom(fov);
 
+
+    /*
     // Move right
     if (glfwGetKey(m_window->getWindow(), GLFW_KEY_D) == GLFW_PRESS)
         m_graphics->getCamera()->cameraPosHorz(0.5f);
@@ -210,6 +215,16 @@ void Engine::ProcessInputObservationMode()
         m_graphics->getCamera()->cameraPosVert(-0.5f);
     // Move down
     if (glfwGetKey(m_window->getWindow(), GLFW_KEY_LEFT_SHIFT) == GLFW_PRESS)
+        m_graphics->getCamera()->cameraPosVert(-0.5f);
+        */
+
+    if (glfwGetKey(m_window->getWindow(), GLFW_KEY_D) == GLFW_PRESS)
+        m_graphics->getCamera()->cameraPosHorz(0.5f);
+    if (glfwGetKey(m_window->getWindow(), GLFW_KEY_A) == GLFW_PRESS)
+        m_graphics->getCamera()->cameraPosHorz(-0.5f);
+    if (glfwGetKey(m_window->getWindow(), GLFW_KEY_W) == GLFW_PRESS)
+        m_graphics->getCamera()->cameraPosVert(0.5f);
+    if (glfwGetKey(m_window->getWindow(), GLFW_KEY_S) == GLFW_PRESS)
         m_graphics->getCamera()->cameraPosVert(-0.5f);
 
 

@@ -50,19 +50,6 @@ bool Graphics::Initialize(int width, int height)
 		return false;
 	}
 
-	//// create and initialize the cube map texture
-	//m_cubeMapTexture = new Texture(
-	//	"asset\\right.png", "asset\\left.png", 
-	//	"asset\\top.png", "asset\\bottom.png", 
-	//	"asset\\front.png", "asset\\back.png");
-	//if (!m_cubeMapTexture->loadCubeTexture(
-	//	"asset\\right.png", "asset\\left.png", 
-	//	"asset\\top.png", "asset\\bottom.png", 
-	//	"asset\\front.png", "asset\\back.png")) {
-	//	cout << "Cube Map Texture failed to load.\n";
-	//	return false;
-	//}
-
 	// Add the vertex shader
 	if (!m_shader->AddShader(GL_VERTEX_SHADER))
 	{

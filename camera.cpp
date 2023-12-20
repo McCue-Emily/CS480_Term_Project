@@ -44,7 +44,7 @@ void Camera::updateView(glm::vec3 cameraUpdate) {
     cameraFront = cameraUpdate;
     view = glm::lookAt(cameraPos, cameraFront + cameraPos, cameraUp);
 }
-
+/*
 void Camera::cameraPosDepth(float speed) {
     cameraPos += speed * cameraFront;
     view = glm::lookAt(cameraPos, cameraFront + cameraPos, cameraUp);
@@ -60,6 +60,19 @@ void Camera::cameraPosVert(float speed) {
     //cameraPos += glm::normalize(glm::cross(cameraFront, cameraUp)) * speed;
     view = glm::lookAt(cameraPos, cameraFront, cameraUp + cameraPos);
 }
+*/
+
+void Camera::cameraPosVert(float speed) {
+    //cameraPos += speed * cameraUp;
+    cameraPos += speed * cameraFront;
+    view = glm::lookAt(cameraPos, cameraFront + cameraPos, cameraUp);
+}
+
+void Camera::cameraPosHorz(float speed) {
+    cameraPos += glm::normalize(glm::cross(cameraFront, cameraUp)) * speed;
+    view = glm::lookAt(cameraPos, cameraFront + cameraPos, cameraUp);
+}
+
 
 void Camera::zoom(float fov) {
     projection = glm::perspective(glm::radians(fov), //the FoV typically 90 degrees is good which is what this is set to

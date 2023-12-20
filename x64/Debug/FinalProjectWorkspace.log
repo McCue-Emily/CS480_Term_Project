@@ -135,36 +135,36 @@ C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics
 C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(239,25): warning C4305:         [
 C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(239,25): warning C4305:             _Ty=float
 C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(239,25): warning C4305:         ]
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(254,12): warning C4305: 'initializing': truncation from 'double' to '_Ty'
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(254,12): warning C4305:         with
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(254,12): warning C4305:         [
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(254,12): warning C4305:             _Ty=float
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(254,12): warning C4305:         ]
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(254,17): warning C4305: 'initializing': truncation from 'double' to '_Ty'
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(254,17): warning C4305:         with
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(254,17): warning C4305:         [
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(254,17): warning C4305:             _Ty=float
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(254,17): warning C4305:         ]
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(254,22): warning C4305: 'initializing': truncation from 'double' to '_Ty'
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(254,22): warning C4305:         with
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(254,22): warning C4305:         [
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(254,22): warning C4305:             _Ty=float
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(254,22): warning C4305:         ]
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(258,15): warning C4305: 'initializing': truncation from 'double' to '_Ty'
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(258,15): warning C4305:         with
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(258,15): warning C4305:         [
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(258,15): warning C4305:             _Ty=float
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(258,15): warning C4305:         ]
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(258,19): warning C4305: 'initializing': truncation from 'double' to '_Ty'
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(258,19): warning C4305:         with
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(258,19): warning C4305:         [
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(258,19): warning C4305:             _Ty=float
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(258,19): warning C4305:         ]
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(258,23): warning C4305: 'initializing': truncation from 'double' to '_Ty'
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(258,23): warning C4305:         with
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(258,23): warning C4305:         [
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(258,23): warning C4305:             _Ty=float
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(258,23): warning C4305:         ]
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(253,12): warning C4305: 'initializing': truncation from 'double' to '_Ty'
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(253,12): warning C4305:         with
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(253,12): warning C4305:         [
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(253,12): warning C4305:             _Ty=float
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(253,12): warning C4305:         ]
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(253,18): warning C4305: 'initializing': truncation from 'double' to '_Ty'
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(253,18): warning C4305:         with
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(253,18): warning C4305:         [
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(253,18): warning C4305:             _Ty=float
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(253,18): warning C4305:         ]
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(253,24): warning C4305: 'initializing': truncation from 'double' to '_Ty'
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(253,24): warning C4305:         with
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(253,24): warning C4305:         [
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(253,24): warning C4305:             _Ty=float
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(253,24): warning C4305:         ]
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(257,15): warning C4305: 'initializing': truncation from 'double' to '_Ty'
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(257,15): warning C4305:         with
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(257,15): warning C4305:         [
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(257,15): warning C4305:             _Ty=float
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(257,15): warning C4305:         ]
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(257,19): warning C4305: 'initializing': truncation from 'double' to '_Ty'
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(257,19): warning C4305:         with
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(257,19): warning C4305:         [
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(257,19): warning C4305:             _Ty=float
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(257,19): warning C4305:         ]
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(257,23): warning C4305: 'initializing': truncation from 'double' to '_Ty'
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(257,23): warning C4305:         with
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(257,23): warning C4305:         [
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(257,23): warning C4305:             _Ty=float
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(257,23): warning C4305:         ]
 C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(272,12): warning C4305: 'initializing': truncation from 'double' to '_Ty'
 C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(272,12): warning C4305:         with
 C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(272,12): warning C4305:         [
@@ -185,106 +185,106 @@ C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics
 C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(276,15): warning C4305:         [
 C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(276,15): warning C4305:             _Ty=float
 C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(276,15): warning C4305:         ]
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(276,20): warning C4305: 'initializing': truncation from 'double' to '_Ty'
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(276,20): warning C4305:         with
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(276,20): warning C4305:         [
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(276,20): warning C4305:             _Ty=float
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(276,20): warning C4305:         ]
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(276,25): warning C4305: 'initializing': truncation from 'double' to '_Ty'
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(276,25): warning C4305:         with
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(276,25): warning C4305:         [
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(276,25): warning C4305:             _Ty=float
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(276,25): warning C4305:         ]
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(309,12): warning C4305: 'initializing': truncation from 'double' to '_Ty'
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(309,12): warning C4305:         with
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(309,12): warning C4305:         [
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(309,12): warning C4305:             _Ty=float
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(309,12): warning C4305:         ]
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(309,17): warning C4305: 'initializing': truncation from 'double' to '_Ty'
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(309,17): warning C4305:         with
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(309,17): warning C4305:         [
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(309,17): warning C4305:             _Ty=float
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(309,17): warning C4305:         ]
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(309,22): warning C4305: 'initializing': truncation from 'double' to '_Ty'
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(309,22): warning C4305:         with
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(309,22): warning C4305:         [
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(309,22): warning C4305:             _Ty=float
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(309,22): warning C4305:         ]
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(313,15): warning C4305: 'initializing': truncation from 'double' to '_Ty'
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(313,15): warning C4305:         with
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(313,15): warning C4305:         [
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(313,15): warning C4305:             _Ty=float
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(313,15): warning C4305:         ]
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(313,20): warning C4305: 'initializing': truncation from 'double' to '_Ty'
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(313,20): warning C4305:         with
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(313,20): warning C4305:         [
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(313,20): warning C4305:             _Ty=float
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(313,20): warning C4305:         ]
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(313,25): warning C4305: 'initializing': truncation from 'double' to '_Ty'
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(313,25): warning C4305:         with
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(313,25): warning C4305:         [
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(313,25): warning C4305:             _Ty=float
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(313,25): warning C4305:         ]
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(327,12): warning C4305: 'initializing': truncation from 'double' to '_Ty'
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(327,12): warning C4305:         with
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(327,12): warning C4305:         [
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(327,12): warning C4305:             _Ty=float
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(327,12): warning C4305:         ]
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(327,17): warning C4305: 'initializing': truncation from 'double' to '_Ty'
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(327,17): warning C4305:         with
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(327,17): warning C4305:         [
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(327,17): warning C4305:             _Ty=float
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(327,17): warning C4305:         ]
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(327,22): warning C4305: 'initializing': truncation from 'double' to '_Ty'
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(327,22): warning C4305:         with
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(327,22): warning C4305:         [
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(327,22): warning C4305:             _Ty=float
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(327,22): warning C4305:         ]
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(331,15): warning C4305: 'initializing': truncation from 'double' to '_Ty'
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(331,15): warning C4305:         with
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(331,15): warning C4305:         [
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(331,15): warning C4305:             _Ty=float
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(331,15): warning C4305:         ]
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(331,20): warning C4305: 'initializing': truncation from 'double' to '_Ty'
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(331,20): warning C4305:         with
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(331,20): warning C4305:         [
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(331,20): warning C4305:             _Ty=float
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(331,20): warning C4305:         ]
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(331,25): warning C4305: 'initializing': truncation from 'double' to '_Ty'
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(331,25): warning C4305:         with
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(331,25): warning C4305:         [
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(331,25): warning C4305:             _Ty=float
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(331,25): warning C4305:         ]
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(345,12): warning C4305: 'initializing': truncation from 'double' to '_Ty'
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(345,12): warning C4305:         with
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(345,12): warning C4305:         [
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(345,12): warning C4305:             _Ty=float
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(345,12): warning C4305:         ]
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(345,18): warning C4305: 'initializing': truncation from 'double' to '_Ty'
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(345,18): warning C4305:         with
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(345,18): warning C4305:         [
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(345,18): warning C4305:             _Ty=float
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(345,18): warning C4305:         ]
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(345,24): warning C4305: 'initializing': truncation from 'double' to '_Ty'
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(345,24): warning C4305:         with
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(345,24): warning C4305:         [
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(345,24): warning C4305:             _Ty=float
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(345,24): warning C4305:         ]
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(349,15): warning C4305: 'initializing': truncation from 'double' to '_Ty'
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(349,15): warning C4305:         with
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(349,15): warning C4305:         [
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(349,15): warning C4305:             _Ty=float
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(349,15): warning C4305:         ]
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(349,19): warning C4305: 'initializing': truncation from 'double' to '_Ty'
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(349,19): warning C4305:         with
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(349,19): warning C4305:         [
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(349,19): warning C4305:             _Ty=float
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(349,19): warning C4305:         ]
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(349,23): warning C4305: 'initializing': truncation from 'double' to '_Ty'
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(349,23): warning C4305:         with
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(349,23): warning C4305:         [
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(349,23): warning C4305:             _Ty=float
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(349,23): warning C4305:         ]
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(276,19): warning C4305: 'initializing': truncation from 'double' to '_Ty'
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(276,19): warning C4305:         with
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(276,19): warning C4305:         [
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(276,19): warning C4305:             _Ty=float
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(276,19): warning C4305:         ]
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(276,23): warning C4305: 'initializing': truncation from 'double' to '_Ty'
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(276,23): warning C4305:         with
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(276,23): warning C4305:         [
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(276,23): warning C4305:             _Ty=float
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(276,23): warning C4305:         ]
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(290,12): warning C4305: 'initializing': truncation from 'double' to '_Ty'
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(290,12): warning C4305:         with
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(290,12): warning C4305:         [
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(290,12): warning C4305:             _Ty=float
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(290,12): warning C4305:         ]
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(290,17): warning C4305: 'initializing': truncation from 'double' to '_Ty'
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(290,17): warning C4305:         with
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(290,17): warning C4305:         [
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(290,17): warning C4305:             _Ty=float
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(290,17): warning C4305:         ]
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(290,22): warning C4305: 'initializing': truncation from 'double' to '_Ty'
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(290,22): warning C4305:         with
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(290,22): warning C4305:         [
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(290,22): warning C4305:             _Ty=float
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(290,22): warning C4305:         ]
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(294,15): warning C4305: 'initializing': truncation from 'double' to '_Ty'
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(294,15): warning C4305:         with
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(294,15): warning C4305:         [
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(294,15): warning C4305:             _Ty=float
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(294,15): warning C4305:         ]
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(294,20): warning C4305: 'initializing': truncation from 'double' to '_Ty'
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(294,20): warning C4305:         with
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(294,20): warning C4305:         [
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(294,20): warning C4305:             _Ty=float
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(294,20): warning C4305:         ]
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(294,25): warning C4305: 'initializing': truncation from 'double' to '_Ty'
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(294,25): warning C4305:         with
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(294,25): warning C4305:         [
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(294,25): warning C4305:             _Ty=float
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(294,25): warning C4305:         ]
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(328,12): warning C4305: 'initializing': truncation from 'double' to '_Ty'
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(328,12): warning C4305:         with
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(328,12): warning C4305:         [
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(328,12): warning C4305:             _Ty=float
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(328,12): warning C4305:         ]
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(328,17): warning C4305: 'initializing': truncation from 'double' to '_Ty'
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(328,17): warning C4305:         with
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(328,17): warning C4305:         [
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(328,17): warning C4305:             _Ty=float
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(328,17): warning C4305:         ]
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(328,22): warning C4305: 'initializing': truncation from 'double' to '_Ty'
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(328,22): warning C4305:         with
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(328,22): warning C4305:         [
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(328,22): warning C4305:             _Ty=float
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(328,22): warning C4305:         ]
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(332,15): warning C4305: 'initializing': truncation from 'double' to '_Ty'
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(332,15): warning C4305:         with
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(332,15): warning C4305:         [
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(332,15): warning C4305:             _Ty=float
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(332,15): warning C4305:         ]
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(332,20): warning C4305: 'initializing': truncation from 'double' to '_Ty'
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(332,20): warning C4305:         with
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(332,20): warning C4305:         [
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(332,20): warning C4305:             _Ty=float
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(332,20): warning C4305:         ]
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(332,25): warning C4305: 'initializing': truncation from 'double' to '_Ty'
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(332,25): warning C4305:         with
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(332,25): warning C4305:         [
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(332,25): warning C4305:             _Ty=float
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(332,25): warning C4305:         ]
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(346,12): warning C4305: 'initializing': truncation from 'double' to '_Ty'
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(346,12): warning C4305:         with
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(346,12): warning C4305:         [
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(346,12): warning C4305:             _Ty=float
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(346,12): warning C4305:         ]
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(346,17): warning C4305: 'initializing': truncation from 'double' to '_Ty'
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(346,17): warning C4305:         with
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(346,17): warning C4305:         [
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(346,17): warning C4305:             _Ty=float
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(346,17): warning C4305:         ]
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(346,22): warning C4305: 'initializing': truncation from 'double' to '_Ty'
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(346,22): warning C4305:         with
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(346,22): warning C4305:         [
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(346,22): warning C4305:             _Ty=float
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(346,22): warning C4305:         ]
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(350,15): warning C4305: 'initializing': truncation from 'double' to '_Ty'
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(350,15): warning C4305:         with
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(350,15): warning C4305:         [
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(350,15): warning C4305:             _Ty=float
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(350,15): warning C4305:         ]
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(350,20): warning C4305: 'initializing': truncation from 'double' to '_Ty'
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(350,20): warning C4305:         with
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(350,20): warning C4305:         [
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(350,20): warning C4305:             _Ty=float
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(350,20): warning C4305:         ]
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(350,25): warning C4305: 'initializing': truncation from 'double' to '_Ty'
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(350,25): warning C4305:         with
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(350,25): warning C4305:         [
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(350,25): warning C4305:             _Ty=float
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(350,25): warning C4305:         ]
 C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(364,12): warning C4305: 'initializing': truncation from 'double' to '_Ty'
 C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(364,12): warning C4305:         with
 C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(364,12): warning C4305:         [
@@ -315,51 +315,51 @@ C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics
 C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(368,23): warning C4305:         [
 C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(368,23): warning C4305:             _Ty=float
 C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(368,23): warning C4305:         ]
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(382,12): warning C4305: 'initializing': truncation from 'double' to '_Ty'
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(382,12): warning C4305:         with
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(382,12): warning C4305:         [
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(382,12): warning C4305:             _Ty=float
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(382,12): warning C4305:         ]
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(382,18): warning C4305: 'initializing': truncation from 'double' to '_Ty'
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(382,18): warning C4305:         with
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(382,18): warning C4305:         [
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(382,18): warning C4305:             _Ty=float
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(382,18): warning C4305:         ]
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(382,24): warning C4305: 'initializing': truncation from 'double' to '_Ty'
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(382,24): warning C4305:         with
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(382,24): warning C4305:         [
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(382,24): warning C4305:             _Ty=float
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(382,24): warning C4305:         ]
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(386,15): warning C4305: 'initializing': truncation from 'double' to '_Ty'
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(386,15): warning C4305:         with
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(386,15): warning C4305:         [
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(386,15): warning C4305:             _Ty=float
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(386,15): warning C4305:         ]
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(386,19): warning C4305: 'initializing': truncation from 'double' to '_Ty'
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(386,19): warning C4305:         with
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(386,19): warning C4305:         [
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(386,19): warning C4305:             _Ty=float
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(386,19): warning C4305:         ]
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(386,23): warning C4305: 'initializing': truncation from 'double' to '_Ty'
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(386,23): warning C4305:         with
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(386,23): warning C4305:         [
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(386,23): warning C4305:             _Ty=float
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(386,23): warning C4305:         ]
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(405,12): warning C4305: 'initializing': truncation from 'double' to '_Ty'
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(405,12): warning C4305:         with
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(405,12): warning C4305:         [
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(405,12): warning C4305:             _Ty=float
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(405,12): warning C4305:         ]
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(405,16): warning C4305: 'initializing': truncation from 'double' to '_Ty'
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(405,16): warning C4305:         with
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(405,16): warning C4305:         [
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(405,16): warning C4305:             _Ty=float
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(405,16): warning C4305:         ]
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(405,20): warning C4305: 'initializing': truncation from 'double' to '_Ty'
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(405,20): warning C4305:         with
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(405,20): warning C4305:         [
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(405,20): warning C4305:             _Ty=float
-C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(405,20): warning C4305:         ]
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(383,12): warning C4305: 'initializing': truncation from 'double' to '_Ty'
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(383,12): warning C4305:         with
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(383,12): warning C4305:         [
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(383,12): warning C4305:             _Ty=float
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(383,12): warning C4305:         ]
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(383,18): warning C4305: 'initializing': truncation from 'double' to '_Ty'
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(383,18): warning C4305:         with
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(383,18): warning C4305:         [
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(383,18): warning C4305:             _Ty=float
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(383,18): warning C4305:         ]
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(383,24): warning C4305: 'initializing': truncation from 'double' to '_Ty'
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(383,24): warning C4305:         with
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(383,24): warning C4305:         [
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(383,24): warning C4305:             _Ty=float
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(383,24): warning C4305:         ]
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(387,15): warning C4305: 'initializing': truncation from 'double' to '_Ty'
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(387,15): warning C4305:         with
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(387,15): warning C4305:         [
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(387,15): warning C4305:             _Ty=float
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(387,15): warning C4305:         ]
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(387,19): warning C4305: 'initializing': truncation from 'double' to '_Ty'
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(387,19): warning C4305:         with
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(387,19): warning C4305:         [
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(387,19): warning C4305:             _Ty=float
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(387,19): warning C4305:         ]
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(387,23): warning C4305: 'initializing': truncation from 'double' to '_Ty'
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(387,23): warning C4305:         with
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(387,23): warning C4305:         [
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(387,23): warning C4305:             _Ty=float
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(387,23): warning C4305:         ]
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(406,12): warning C4305: 'initializing': truncation from 'double' to '_Ty'
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(406,12): warning C4305:         with
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(406,12): warning C4305:         [
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(406,12): warning C4305:             _Ty=float
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(406,12): warning C4305:         ]
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(406,16): warning C4305: 'initializing': truncation from 'double' to '_Ty'
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(406,16): warning C4305:         with
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(406,16): warning C4305:         [
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(406,16): warning C4305:             _Ty=float
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(406,16): warning C4305:         ]
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(406,20): warning C4305: 'initializing': truncation from 'double' to '_Ty'
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(406,20): warning C4305:         with
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(406,20): warning C4305:         [
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(406,20): warning C4305:             _Ty=float
+C:\Users\jimmy\source\repos\FinalProjectWorkspace\FinalProjectWorkspace\graphics.cpp(406,20): warning C4305:         ]
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\algorithm(3456,24): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
   (compiling source file 'graphics.cpp')
   C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\algorithm(3456,24):

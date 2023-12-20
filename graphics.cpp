@@ -118,7 +118,7 @@ bool Graphics::Initialize(int width, int height)
 	m_sphere9 = new Sphere(48, "assets\\Saturn.jpg");
 
 	// Saturn's Rings
-	m_ring = new Ring(48, "assets\\Saturn_ring.png");
+	m_ring = new Sphere(48, "assets\\Saturn_ring.png");
 
 	// Uranus
 	m_sphere10 = new Sphere(48, "assets\\Uranus.jpg");
@@ -249,6 +249,24 @@ void Graphics::HierarchicalUpdate2(double dt) {
 
 	modelStack.pop();	// Mars
 
+	// Ceres - Asteroid
+	speed = { .075, .075, .075 };
+	dist = { 4. , 0., 4. };  // todo could be more realistic
+	transform(dist.begin(), dist.end(), dist.begin(), [system_scale](float& c) { return c * system_scale; });
+	rotVector = { 0. , 1., 0. };
+	rotSpeed = { .1, .1, .1 };
+	scale = { .75,.75,.75 };
+	localTransform = modelStack.top();				// start with sun's coordinate
+	localTransform *= glm::translate(glm::mat4(1.f),
+		glm::vec3(cos(speed[0] * dt) * dist[0], sin(speed[1] * dt) * dist[1], sin(speed[2] * dt) * dist[2]));
+	modelStack.push(localTransform);			// store planet-sun coordinate
+	localTransform *= glm::rotate(glm::mat4(1.f), rotSpeed[0] * (float)dt, rotVector);
+	localTransform *= glm::scale(glm::vec3(scale[0], scale[1], scale[2]));
+	if (m_sphere7 != NULL)
+		m_sphere7->Update(localTransform);
+
+	modelStack.pop();	// Ceres
+
 
 	// Jupiter
 	speed = { .05, .05, .05 };
@@ -271,7 +289,7 @@ void Graphics::HierarchicalUpdate2(double dt) {
 	// Saturn
 	speed = { .04, .04, .04 };
 	dist = { 83. , 0., 83. };
-	transform(dist.begin(), dist.end(), dist.begin(), [system_scale](float& c) { return c * system_scale; });
+	transform(dist.begin(), dist.end(), dist.begin(), [system_scale](float& c) { return c * system_scale * 0.5; });
 	rotVector = { 0. , 1., 0. };
 	rotSpeed = { .19, .19, .19 };
 	scale = { .75,.75,.75 };
@@ -286,6 +304,7 @@ void Graphics::HierarchicalUpdate2(double dt) {
 
 	
 	// Saturn's Rings
+	/*
 	speed = { 3, 3, 3 };
 	dist = { 1.25, .50, 1.25 };  // todo I think this probably has to be 0'd out, but I'm leaving it like this to see Saturn's rings orbit in a funny way
 	transform(dist.begin(), dist.end(), dist.begin(), [system_scale](float& c) { return c * system_scale; });
@@ -302,8 +321,8 @@ void Graphics::HierarchicalUpdate2(double dt) {
 		m_sphere3->Update(localTransform);
 
 	modelStack.pop();	// Saturn's Rings
+	*/
 	modelStack.pop();	// Saturn
-
 
 	// Uranus
 	speed = { .03, .03, .03 };
@@ -341,47 +360,10 @@ void Graphics::HierarchicalUpdate2(double dt) {
 
 	modelStack.pop();	// Neptune
 
-	// Ceres - Asteroid
-	speed = { .075, .075, .075 };
-	dist = { 7. , 0., 7. };
-	transform(dist.begin(), dist.end(), dist.begin(), [system_scale](float& c) { return c * system_scale; });
-	rotVector = { 0. , 1., 0. };
-	rotSpeed = { .1, .1, .1 };
-	scale = { .75,.75,.75 };
-	localTransform = modelStack.top();				// start with sun's coordinate
-	localTransform *= glm::translate(glm::mat4(1.f),
-		glm::vec3(cos(speed[0] * dt) * dist[0], sin(speed[1] * dt) * dist[1], sin(speed[2] * dt) * dist[2]));
-	modelStack.push(localTransform);			// store planet-sun coordinate
-	localTransform *= glm::rotate(glm::mat4(1.f), rotSpeed[0] * (float)dt, rotVector);
-	localTransform *= glm::scale(glm::vec3(scale[0], scale[1], scale[2]));
-	if (m_sphere7 != NULL)
-		m_sphere7->Update(localTransform);
-
-	modelStack.pop();	// Ceres
-
-
-	// Eris - Asteroid
-	speed = { .075, .075, .075 };
-	dist = { 7. , 0., 7. };
-	transform(dist.begin(), dist.end(), dist.begin(), [system_scale](float& c) { return c * system_scale; });
-	rotVector = { 0. , 1., 0. };
-	rotSpeed = { .1, .1, .1 };
-	scale = { .75,.75,.75 };
-	localTransform = modelStack.top();				// start with sun's coordinate
-	localTransform *= glm::translate(glm::mat4(1.f),
-		glm::vec3(cos(speed[0] * dt) * dist[0], sin(speed[1] * dt) * dist[1], sin(speed[2] * dt) * dist[2]));
-	modelStack.push(localTransform);			// store planet-sun coordinate
-	localTransform *= glm::rotate(glm::mat4(1.f), rotSpeed[0] * (float)dt, rotVector);
-	localTransform *= glm::scale(glm::vec3(scale[0], scale[1], scale[2]));
-	if (m_sphere12 != NULL)
-		m_sphere12->Update(localTransform);
-
-	modelStack.pop();	// Eris
-
 	// Haumea - Asteroid
 	speed = { .075, .075, .075 };
-	dist = { 7. , 0., 7. };
-	transform(dist.begin(), dist.end(), dist.begin(), [system_scale](float& c) { return c * system_scale; });
+	dist = { 350. , 0., 350. };  // todo
+	transform(dist.begin(), dist.end(), dist.begin(), [system_scale](float& c) { return c * system_scale * 0.18; });
 	rotVector = { 0. , 1., 0. };
 	rotSpeed = { .1, .1, .1 };
 	scale = { .75,.75,.75 };
@@ -395,6 +377,25 @@ void Graphics::HierarchicalUpdate2(double dt) {
 		m_sphere13->Update(localTransform);
 
 	modelStack.pop();	// Haumea
+
+
+	// Eris - Asteroid
+	speed = { .075, .075, .075 };
+	dist = { 400. , 0., 400. };  // todo
+	transform(dist.begin(), dist.end(), dist.begin(), [system_scale](float& c) { return c * system_scale * 0.18; });
+	rotVector = { 0. , 1., 0. };
+	rotSpeed = { .1, .1, .1 };
+	scale = { .75,.75,.75 };
+	localTransform = modelStack.top();				// start with sun's coordinate
+	localTransform *= glm::translate(glm::mat4(1.f),
+		glm::vec3(cos(speed[0] * dt) * dist[0], sin(speed[1] * dt) * dist[1], sin(speed[2] * dt) * dist[2]));
+	modelStack.push(localTransform);			// store planet-sun coordinate
+	localTransform *= glm::rotate(glm::mat4(1.f), rotSpeed[0] * (float)dt, rotVector);
+	localTransform *= glm::scale(glm::vec3(scale[0], scale[1], scale[2]));
+	if (m_sphere12 != NULL)
+		m_sphere12->Update(localTransform);
+
+	modelStack.pop();	// Eris
 
 	// Starship
 	speed = { 1, 1., 1. };

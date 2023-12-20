@@ -65,7 +65,7 @@ class Graphics
     Sphere* m_sphere13;
 
     Mesh* m_mesh;
-    Ring* m_ring;
+    Sphere* m_ring;
 
 
 

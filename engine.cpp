@@ -163,18 +163,24 @@ void Engine::ProcessInput()
             key_hold = 0;
         }
 
-        // Move right
-        if (glfwGetKey(m_window->getWindow(), GLFW_KEY_D) == GLFW_PRESS)
-            m_graphics->getCamera()->Rotate(1.0f, glm::vec3(0, 1, 0));  // the vec specifies that we will rotate in the y axis
-        // Move left
-        if (glfwGetKey(m_window->getWindow(), GLFW_KEY_A) == GLFW_PRESS)
-            m_graphics->getCamera()->Rotate(-1.0f / 180.0f, glm::vec3(0, 1, 0));
+        float yaw_adjust = 0.01;
+        float pitch_adjust = 0.1;
+        // Look right
+        if (glfwGetKey(m_window->getWindow(), GLFW_KEY_D) == GLFW_PRESS) {
+            //m_graphics->getCamera()->Rotate(1.0f, glm::vec3(0, 1, 0));  // the vec specifies that we will rotate in the y axis
+            yaw -= yaw_adjust * yaw;
+        }
+        // Look left
+        if (glfwGetKey(m_window->getWindow(), GLFW_KEY_A) == GLFW_PRESS) {
+            //m_graphics->getCamera()->Rotate(-1.0f / 180.0f, glm::vec3(0, 1, 0));
+            yaw += yaw_adjust * yaw;
+        }
         // Zoom in
         if (glfwGetKey(m_window->getWindow(), GLFW_KEY_W) == GLFW_PRESS)
-            m_graphics->getCamera()->cameraPosVert(0.5f);
+            yaw -= pitch_adjust * pitch;
         // Zoom out
         if (glfwGetKey(m_window->getWindow(), GLFW_KEY_S) == GLFW_PRESS)
-            m_graphics->getCamera()->cameraPosVert(-0.5f);
+            yaw += pitch_adjust * pitch;
     }
         
 

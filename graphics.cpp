@@ -122,6 +122,10 @@ bool Graphics::Initialize(int width, int height)
 	// Haumea - Asteroid
 	m_sphere13 = new Sphere(48, "assets\\Haumea.jpg");
 
+	// SkyBox
+	m_skybox = new SkyBox("assts\\Cubemaps\\Galaxy-cubemap2.png");
+	m_skybox->setupModelMatrix(glm::vec3(.0f, .0f, .0f), 0.0f, 100.0f);
+
 
 	//enable depth testing
 	glEnable(GL_DEPTH_TEST);
@@ -143,11 +147,14 @@ void Graphics::set_mode(bool b) {
 }
 
 void Graphics::EnterObservational() {
-	//CameraProjectionBackup = m_camera->GetProjection();
-	//CameraViewBackup = m_camera->GetView();
+	CameraProjectionBackup = m_camera->GetProjection();
+	CameraViewBackup = m_camera->GetView();
 	CameraPosBackup = m_camera->GetPos();
 	CameraFrontBackup = m_camera->GetFront();
 	CameraUpBackup = m_camera->GetUp();
+	xBackup = m_camera->Getx();
+	yBackup = m_camera->Gety();
+	zBackup = m_camera->Getz();
 	// todo determine which planet is nearest
 	// todo maybe animate transition to observational mode
 }
@@ -188,12 +195,15 @@ void Graphics::ObservationModeUpdate(double dt) {
 }
 
 void Graphics::ExitObservational() { 
-	//m_camera->SetProjection(CameraProjectionBackup);
-	//m_camera->SetView(CameraViewBackup);
-	//m_camera->SetPos(CameraPosBackup);
-	//m_camera->SetFront(CameraFrontBackup);
-	//m_camera->SetUp(CameraUpBackup);
-	m_camera->PlanetaryObsMode(CameraPosBackup, CameraFrontBackup, CameraUpBackup);
+	m_camera->SetProjection(CameraProjectionBackup);
+	m_camera->SetView(CameraViewBackup);
+	m_camera->SetPos(CameraPosBackup);
+	m_camera->SetFront(CameraFrontBackup);
+	m_camera->SetUp(CameraUpBackup);
+	m_camera->Setx(xBackup);
+	m_camera->Sety(yBackup);
+	m_camera->Setz(zBackup);
+	//m_camera->PlanetaryObsMode(CameraPosBackup, CameraFrontBackup, CameraUpBackup);
 	// todo maybe animate transition out of observational mode
 }
 
@@ -207,6 +217,9 @@ void Graphics::HierarchicalUpdate2(double dt) {
 	std::vector<float> speed, dist, rotSpeed, scale;
 	glm::vec3 rotVector;
 	glm::mat4 localTransform;
+
+	// Updating the skybox
+	m_skybox->Update(dt);
 
 	// position of the sun	
 	modelStack.push(glm::translate(glm::mat4(1.f), glm::vec3(0, 0, 0)));  // sun's coordinate
@@ -267,12 +280,13 @@ void Graphics::HierarchicalUpdate2(double dt) {
 		modelStack.push(localTransform);			// store moon-planet-sun coordinate
 		localTransform *= glm::rotate(glm::mat4(1.f), rotSpeed[0] * (float)dt, rotVector);
 		localTransform *= glm::scale(glm::vec3(scale[0], scale[1], scale[2]));
-		if (m_camera != NULL)
+		if (m_camera != NULL) {
 			col = 1;
 			glm::vec3 pos = { localTransform[col].x, localTransform[col].y, localTransform[col].z };
-			//pos = { 20.0f, 20.0f, 20.0f };
+			pos = { 20.0f, 20.0f, 20.0f };
 			m_camera->PlanetaryObsMode(pos);
 			//m_camera->cameraPosVert(0.5f);
+		}
 		modelStack.pop();	// Camera
 	}
 
@@ -541,15 +555,22 @@ void Graphics::Render()
 	glUniformMatrix4fv(m_projectionMatrix, 1, GL_FALSE, glm::value_ptr(m_camera->GetProjection()));
 	glUniformMatrix4fv(m_viewMatrix, 1, GL_FALSE, glm::value_ptr(m_camera->GetView()));
 
-	// Render the objects
-	/*if (m_cube != NULL){
-		glUniformMatrix4fv(m_modelMatrix, 1, GL_FALSE, glm::value_ptr(m_cube->GetModel()));
-		m_cube->Render(m_positionAttrib,m_colorAttrib);
-	}*/
+	// SkyBox
+	if (m_sphere != NULL) {
+		glUniformMatrix4fv(m_modelMatrix, 1, GL_FALSE, glm::value_ptr(m_sphere->GetModel()));
+		if (m_sphere->hasTex) {
+			glActiveTexture(GL_TEXTURE0);
+			glBindTexture(GL_TEXTURE_2D, m_skybox->getTextureID());
+			GLuint sampler = m_shader->GetUniformLocation("sp");
+			if (sampler == INVALID_UNIFORM_LOCATION)
+			{
+				printf("Sampler Not found not found\n");
+			}
+			glUniform1i(sampler, 0);
 
-	//// Set the cube map texture
-	//glActiveTexture(GL_TEXTURE0);
-	//glBindTexture(GL_TEXTURE_CUBE_MAP, m_cubeMapTexture->getCubeTextureID());
+			m_sphere->Render(m_positionAttrib, m_colorAttrib, m_tcAttrib, m_hasTexture);
+		}
+	}
 	
 	// Starship
 	if (m_mesh != NULL) {
@@ -567,11 +588,6 @@ void Graphics::Render()
 			m_mesh->Render(m_positionAttrib, m_colorAttrib, m_tcAttrib, m_hasTexture);
 		}
 	}
-
-	/*if (m_pyramid != NULL) {
-		glUniformMatrix4fv(m_modelMatrix, 1, GL_FALSE, glm::value_ptr(m_pyramid->GetModel()));
-		m_pyramid->Render(m_positionAttrib, m_colorAttrib);
-	}*/
 
 	// Sun
 	if (m_sphere != NULL) {

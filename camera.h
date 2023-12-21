@@ -15,11 +15,18 @@ class Camera
     glm::vec3 GetPos();
     glm::vec3 GetFront();
     glm::vec3 GetUp();
+    double Getx();
+    double Gety();
+    double Getz();
+
     void SetProjection(glm::mat4 p);
     void SetView(glm::mat4 p);
     void SetPos(glm::vec3 p);
     void SetFront(glm::vec3 f);
     void SetUp(glm::vec3 u);
+    void Setx(double n);
+    void Sety(double n);
+    void Setz(double n);
 
     void updateView(glm::vec3 cameraFront);
     void cameraPosDepth(float speed);

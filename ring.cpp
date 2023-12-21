@@ -56,7 +56,7 @@ void Ring::Render(GLint positionAttribLoc, GLint colorAttribLoc)
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, IB);
 
     // Render
-    glDrawElements(GL_TRIANGLES, Indices.size(), GL_UNSIGNED_INT, 0);
+    glDrawElements(GL_LINE_STRIP, Indices.size(), GL_UNSIGNED_INT, 0);
 
     // Disable vertex arrays
     glDisableVertexAttribArray(positionAttribLoc);

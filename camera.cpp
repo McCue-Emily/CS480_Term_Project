@@ -82,6 +82,28 @@ void Camera::SetUp(glm::vec3 u) {
     cameraPos = u;
 }
 
+double Camera::Getx() {
+    return x;
+}
+
+double Camera::Gety() {
+    return y;
+}
+
+double Camera::Getz() {
+    return z;
+}
+
+void Camera::Setx(double n) {
+    x = n;
+}
+void Camera::Sety(double n) {
+    y = n;
+}
+void Camera::Setz(double n) {
+    z = n;
+}
+
 void Camera::updateView(glm::vec3 cameraUpdate) {
     cameraFront = cameraUpdate;
     view = glm::lookAt(cameraPos, cameraFront + cameraPos, cameraUp);

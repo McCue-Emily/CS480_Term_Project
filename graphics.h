@@ -12,6 +12,7 @@ using namespace std;
 #include "ring.h"
 #include "sphere.h"
 #include "mesh.h"
+#include "skybox.h"
 
 #define numVBOs 2;
 #define numIBs 2;
@@ -47,6 +48,7 @@ class Graphics
     glm::vec3 CameraPosBackup;
     glm::vec3 CameraFrontBackup;
     glm::vec3 CameraUpBackup;
+    double xBackup, yBackup, zBackup;
 
     Camera *m_camera;
     Camera *backup_camera;
@@ -77,6 +79,7 @@ class Graphics
 
     Mesh* m_mesh;
     Ring* m_ring;
+    SkyBox* m_skybox;
 
 
 

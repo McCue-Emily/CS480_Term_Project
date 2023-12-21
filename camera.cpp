@@ -132,7 +132,7 @@ void Camera::PlanetaryObsMode(glm::vec3 pos, glm::vec3 front, glm::vec3 up) {
     view = glm::lookAt(pos, front, up);
 }
 
-void Camera::PlanetaryObsMode(glm::vec3 pos) {  // todo make camera look at planet
+void Camera::PlanetaryObsMode(glm::vec3 pos) {  // make camera look at planet
     cameraPos = pos;
     view = glm::lookAt(cameraPos, cameraFront + cameraPos, cameraUp);
 }

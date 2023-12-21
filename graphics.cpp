@@ -268,10 +268,10 @@ void Graphics::HierarchicalUpdate2(double dt) {
 	if (observation_mode) {
 		// position of the camera
 		speed = { 0.3, 0.3, 0.3 };
-		dist = { 1.25, .50, 1.25 };
+		dist = { 10., 10., 10. };
 		transform(dist.begin(), dist.end(), dist.begin(), [system_distances_scale](float& c) { return c * 20; });
 		rotVector = { 1.,1.,1. };
-		rotSpeed = { .0, .0, .0 };
+		rotSpeed = { 1.0, 1.0, 1.0 };
 		scale = { .20f, .20f, .20f };
 		transform(scale.begin(), scale.end(), scale.begin(), [orbiter_scale](float& c) { return c * orbiter_scale; });
 		localTransform = modelStack.top();
@@ -283,7 +283,7 @@ void Graphics::HierarchicalUpdate2(double dt) {
 		if (m_camera != NULL) {
 			col = 1;
 			glm::vec3 pos = { localTransform[col].x, localTransform[col].y, localTransform[col].z };
-			pos = { 20.0f, 20.0f, 20.0f };
+			//pos = { 20.0f, 20.0f, 20.0f };
 			m_camera->PlanetaryObsMode(pos);
 			//m_camera->cameraPosVert(0.5f);
 		}

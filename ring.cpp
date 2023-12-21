@@ -5,7 +5,7 @@ Ring::Ring()
     init(48);
     setupVertices();
     setupBuffers();
-    //setupModelMatrix(glm::vec3(0., 0., 0.), 0., 1.);
+    //setupModelMatrix(glm::vec3(0., 0., 0.), 1.5708, 1.);
 }
 
 Ring::Ring(int prec) { // prec is precision, or number of slices
@@ -142,7 +142,7 @@ void Ring::setupBuffers() {
 void Ring::setupModelMatrix(glm::vec3 pivot, float angle, float scale) {
     pivotLocation = pivot;
     model = glm::translate(glm::mat4(1.0f), pivotLocation);
-    model *= glm::rotate(glm::mat4(1.f), angle, glm::vec3(0., 1., 0));
+    model *= glm::rotate(glm::mat4(1.f), angle, glm::vec3(0., 0., 0.));
     model *= glm::scale(glm::vec3(scale, scale, scale));
 }
 

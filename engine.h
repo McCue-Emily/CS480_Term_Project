@@ -31,7 +31,7 @@ class Engine
     int m_WINDOW_WIDTH;
     int m_WINDOW_HEIGHT;
     bool m_FULLSCREEN;
-    bool observation_mode = 0;
+    bool observation_mode = false;
     bool key_hold = 0;
 
 

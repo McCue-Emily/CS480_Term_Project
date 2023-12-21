@@ -131,16 +131,23 @@ bool Graphics::Initialize(int width, int height)
 }
 
 void Graphics::set_mode(bool b) {
-	if (b != observation_mode)
+	if (b != observation_mode) {
 		observation_mode = b;
-		if (b)
+		if (b) {
 			EnterObservational();
-		else
+		}
+		else {
 			ExitObservational();
+		}
+	}
 }
 
 void Graphics::EnterObservational() {
-	backup_camera = m_camera;
+	//CameraProjectionBackup = m_camera->GetProjection();
+	//CameraViewBackup = m_camera->GetView();
+	CameraPosBackup = m_camera->GetPos();
+	CameraFrontBackup = m_camera->GetFront();
+	CameraUpBackup = m_camera->GetUp();
 	// todo determine which planet is nearest
 	// todo maybe animate transition to observational mode
 }
@@ -180,12 +187,18 @@ void Graphics::ObservationModeUpdate(double dt) {
 	modelStack.pop();	// Camera
 }
 
-void Graphics::ExitObservational() {
-	//m_camera = backup_camera;
+void Graphics::ExitObservational() { 
+	//m_camera->SetProjection(CameraProjectionBackup);
+	//m_camera->SetView(CameraViewBackup);
+	//m_camera->SetPos(CameraPosBackup);
+	//m_camera->SetFront(CameraFrontBackup);
+	//m_camera->SetUp(CameraUpBackup);
+	m_camera->PlanetaryObsMode(CameraPosBackup, CameraFrontBackup, CameraUpBackup);
 	// todo maybe animate transition out of observational mode
 }
 
 void Graphics::HierarchicalUpdate2(double dt) {
+	int col;
 
 	float system_distances_scale = 0.4;  // scales all the distance vectors down from their realistic values
 	float exoplanet_distances_scale = 0.18;  // adjust the distance of the exoplanets and Neptune from the sun
@@ -239,8 +252,29 @@ void Graphics::HierarchicalUpdate2(double dt) {
 	if (m_sphere5 != NULL)
 		m_sphere5->Update(localTransform);
 
-	if (observation_mode)
-		ObservationModeUpdate(dt);
+	if (observation_mode) {
+		// position of the camera
+		speed = { 0.3, 0.3, 0.3 };
+		dist = { 1.25, .50, 1.25 };
+		transform(dist.begin(), dist.end(), dist.begin(), [system_distances_scale](float& c) { return c * 20; });
+		rotVector = { 1.,1.,1. };
+		rotSpeed = { .0, .0, .0 };
+		scale = { .20f, .20f, .20f };
+		transform(scale.begin(), scale.end(), scale.begin(), [orbiter_scale](float& c) { return c * orbiter_scale; });
+		localTransform = modelStack.top();
+		localTransform *= glm::translate(glm::mat4(1.f),
+			glm::vec3(cos(speed[0] * dt) * dist[0], sin(speed[1] * dt) * dist[1], sin(speed[2] * dt) * dist[2]));
+		modelStack.push(localTransform);			// store moon-planet-sun coordinate
+		localTransform *= glm::rotate(glm::mat4(1.f), rotSpeed[0] * (float)dt, rotVector);
+		localTransform *= glm::scale(glm::vec3(scale[0], scale[1], scale[2]));
+		if (m_camera != NULL)
+			col = 1;
+			glm::vec3 pos = { localTransform[col].x, localTransform[col].y, localTransform[col].z };
+			//pos = { 20.0f, 20.0f, 20.0f };
+			m_camera->PlanetaryObsMode(pos);
+			//m_camera->cameraPosVert(0.5f);
+		modelStack.pop();	// Camera
+	}
 
 	modelStack.pop();	// Venus
 
@@ -360,12 +394,12 @@ void Graphics::HierarchicalUpdate2(double dt) {
 	
 	// Saturn's Rings
 
-	speed = { 0.3, 0.3, 0.3 };
-	dist = { 1.25, .50, 1.25 };  // todo I think this probably has to be 0'd out, but I'm leaving it like this to see Saturn's rings orbit in a funny way
+	speed = { 0.7, 0.7, 0.7 };
+	dist = { .0, .0, .0 };  // todo I think this probably has to be 0'd out, but I'm leaving it like this to see Saturn's rings orbit in a funny way
 	// transform(dist.begin(), dist.end(), dist.begin(), [system_distances_scale](float& c) { return c * system_distances_scale; });
-	rotVector = { 1.,1.,1. };
-	rotSpeed = { .25, .25, .25 };
-	scale = { 1.f, 1.f, 1.f };  // todo adjust
+	rotVector = { 0.,0.,1. };
+	rotSpeed = { .25, .0, .0 };
+	scale = { 1.5f, 1.5f, 1.5f };  // todo adjust
 	transform(scale.begin(), scale.end(), scale.begin(), [orbiter_scale](float& c) { return c * orbiter_scale; });
 	localTransform = modelStack.top();
 	localTransform *= glm::translate(glm::mat4(1.f),
@@ -781,19 +815,6 @@ void Graphics::Render()
 	glUseProgram(0);
 
 }
-
-//bool Graphics::loadCubeMapTexture() {
-//	// create a new cube map texture object
-//	m_cubeMapTexture = new Texture();
-//
-//	// load the cube map texture
-//	if (!m_cubeMapTexture->loadCubeTexture(right, left, top, bottom, front, back)) {
-//		// if loading failes
-//		cout << "Error loading cube texture.\n";
-//		return false;
-//	}
-//}
-
 
 bool Graphics::collectShPrLocs() {
 	bool anyProblem = true;

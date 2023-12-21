@@ -50,6 +50,38 @@ glm::mat4 Camera::GetView()
   return view;
 }
 
+void Camera::SetProjection(glm::mat4 p)
+{
+    projection = p;
+}
+
+void Camera::SetView(glm::mat4 v)
+{
+    view = v;
+}
+
+glm::vec3 Camera::GetPos() {
+    return cameraPos;
+}
+
+glm::vec3 Camera::GetFront() {
+    return cameraFront;
+}
+
+glm::vec3 Camera::GetUp() {
+    return cameraUp;
+}
+void Camera::SetPos(glm::vec3 p) {
+    cameraPos = p;
+}
+void Camera::SetFront(glm::vec3 f) {
+    cameraPos = f;
+}
+
+void Camera::SetUp(glm::vec3 u) {
+    cameraPos = u;
+}
+
 void Camera::updateView(glm::vec3 cameraUpdate) {
     cameraFront = cameraUpdate;
     view = glm::lookAt(cameraPos, cameraFront + cameraPos, cameraUp);
@@ -79,7 +111,8 @@ void Camera::PlanetaryObsMode(glm::vec3 pos, glm::vec3 front, glm::vec3 up) {
 }
 
 void Camera::PlanetaryObsMode(glm::vec3 pos) {  // todo make camera look at planet
-    view = glm::lookAt(pos, cameraFront, cameraUp);
+    cameraPos = pos;
+    view = glm::lookAt(cameraPos, cameraFront + cameraPos, cameraUp);
 }
 
 void Camera::Rotate(float angle, glm::vec3 axes) {

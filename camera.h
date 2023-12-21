@@ -12,6 +12,14 @@ class Camera
     bool Initialize(int w, int h);
     glm::mat4 GetProjection();
     glm::mat4 GetView();
+    glm::vec3 GetPos();
+    glm::vec3 GetFront();
+    glm::vec3 GetUp();
+    void SetProjection(glm::mat4 p);
+    void SetView(glm::mat4 p);
+    void SetPos(glm::vec3 p);
+    void SetFront(glm::vec3 f);
+    void SetUp(glm::vec3 u);
 
     void updateView(glm::vec3 cameraFront);
     void cameraPosDepth(float speed);

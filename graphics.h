@@ -23,7 +23,7 @@ class Graphics
     Graphics();
     ~Graphics();
     bool Initialize(int width, int height);
-    bool observation_mode = 0;
+    bool observation_mode = false;
     void HierarchicalUpdate2(double dt);
     void Render();
     void set_mode(bool b);
@@ -42,6 +42,11 @@ class Graphics
     void ExitObservational();
 
     stack<glm::mat4> modelStack;
+    glm::mat4 CameraProjectionBackup;
+    glm::mat4 CameraViewBackup;
+    glm::vec3 CameraPosBackup;
+    glm::vec3 CameraFrontBackup;
+    glm::vec3 CameraUpBackup;
 
     Camera *m_camera;
     Camera *backup_camera;

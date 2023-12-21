@@ -192,8 +192,9 @@ void Graphics::ObservationModeUpdate(double dt) {
 	// position of the camera
 	speed = { 0.3, 0.3, 0.3 };
 	dist = { 1.25, .50, 1.25 };
+	dist = { 1., 1., 1. };
 	// transform(dist.begin(), dist.end(), dist.begin(), [system_distances_scale](float& c) { return c * system_distances_scale; });
-	rotVector = { 1.,1.,1. };
+	rotVector = { 1.,0.,0. };
 	rotSpeed = { .0, .0, .0 };
 	scale = { .20f, .20f, .20f };
 	transform(scale.begin(), scale.end(), scale.begin(), [orbiter_scale](float& c) { return c * orbiter_scale; });
@@ -204,15 +205,9 @@ void Graphics::ObservationModeUpdate(double dt) {
 	localTransform *= glm::rotate(glm::mat4(1.f), rotSpeed[0] * (float)dt, rotVector);
 	localTransform *= glm::scale(glm::vec3(scale[0], scale[1], scale[2]));
 	if (m_camera != NULL)
-		col = 0;
+		col = 3;
 		glm::vec3 pos = { localTransform[col].x, localTransform[col].y, localTransform[col].z };
-		//col = 1;
-		//glm::vec3 front = { localTransform[col].x, localTransform[col].y, localTransform[col].z };
-		//col = 2;
-		//glm::vec3 up = { localTransform[col].x, localTransform[col].y, localTransform[col].z };
-		pos = { 10.0f, 100.0f, 10.0f };
 		m_camera->PlanetaryObsMode(pos);
-		//m_camera->cameraPosVert(0.5f);
 	modelStack.pop();	// Camera
 }
 
@@ -288,28 +283,7 @@ void Graphics::HierarchicalUpdate2(double dt) {
 		m_sphere5->Update(localTransform);
 
 	if (observation_mode) {
-		// position of the camera
-		speed = { 0.3, 0.3, 0.3 };
-		dist = { 10., 10., 10. };
-		transform(dist.begin(), dist.end(), dist.begin(), [system_distances_scale](float& c) { return c * 20; });
-		rotVector = { 1.,1.,1. };
-		rotSpeed = { 1.0, 1.0, 1.0 };
-		scale = { .20f, .20f, .20f };
-		transform(scale.begin(), scale.end(), scale.begin(), [orbiter_scale](float& c) { return c * orbiter_scale; });
-		localTransform = modelStack.top();
-		localTransform *= glm::translate(glm::mat4(1.f),
-			glm::vec3(cos(speed[0] * dt) * dist[0], sin(speed[1] * dt) * dist[1], sin(speed[2] * dt) * dist[2]));
-		modelStack.push(localTransform);			// store moon-planet-sun coordinate
-		localTransform *= glm::rotate(glm::mat4(1.f), rotSpeed[0] * (float)dt, rotVector);
-		localTransform *= glm::scale(glm::vec3(scale[0], scale[1], scale[2]));
-		if (m_camera != NULL) {
-			col = 1;
-			glm::vec3 pos = { localTransform[col].x, localTransform[col].y, localTransform[col].z };
-			//pos = { 20.0f, 20.0f, 20.0f };
-			m_camera->PlanetaryObsMode(pos);
-			//m_camera->cameraPosVert(0.5f);
-		}
-		modelStack.pop();	// Camera
+		ObservationModeUpdate(dt);
 	}
 
 	modelStack.pop();	// Venus
@@ -528,26 +502,16 @@ void Graphics::HierarchicalUpdate2(double dt) {
 
 	//modelStack.pop(); 	// back to the planet coordinate
 	//modelStack.pop(); 	// back to the sun coordinate
+
+	// Starship
+	/*
 	while (!modelStack.empty()) {
 		modelStack.pop();
 	}
-
-	// Starship
 	if (!observation_mode) {
-		//glm::vec4 v(m_camera->GetPos(), 0);
 		glm::vec3 pos = m_camera->GetFront();
-		//speed = { 1, 1., 1. };
-		//dist = { 0, 6., 6. };
-		//transform(dist.begin(), dist.end(), dist.begin(), [system_distances_scale](float& c) { return c * system_distances_scale; });
-		//rotVector = { 0 , 0, 0 };
-		//rotSpeed = { 1, 1, 1. };
 		scale = { .02,.02,.02 };
 		transform(scale.begin(), scale.end(), scale.begin(), [orbiter_scale](float& c) { return c * orbiter_scale; });
-		//localTransform = modelStack.top();
-		//localTransform *= glm::translate(glm::mat4(1.f), glm::vec3(sin(speed[0] * dt) * dist[0], cos(speed[1] * dt) * dist[1], sin(speed[2] * dt) * dist[2]));
-		//modelStack.push(localTransform);			// store planet-sun coordinate
-		//localTransform *= glm::rotate(glm::mat4(1.f), -80.f, glm::vec3(1, 0, 0));
-		//localTransform *= glm::rotate(glm::mat4(1.f), rotSpeed[0] * (float)dt, rotVector);
 		localTransform *= glm::translate(m_mesh->GetModel(), pos);
 		localTransform *= glm::scale(glm::vec3(scale[0], scale[1], scale[2]));
 		localTransform *= glm::translate(localTransform, glm::vec3(100.f,100.f,100.f));
@@ -557,6 +521,27 @@ void Graphics::HierarchicalUpdate2(double dt) {
 		while (!modelStack.empty()) {
 			modelStack.pop();
 		}
+	}
+	*/
+
+	// Starship
+	speed = { 1, 1., 1. };
+	dist = { 0, 6., 6. };
+	rotVector = { 1 , 0, 0 };
+	rotSpeed = { 1, 1, 1. };
+	scale = { .02,.02,.02 };
+	localTransform = modelStack.top();
+	localTransform *= glm::translate(glm::mat4(1.f),
+		glm::vec3(sin(speed[0] * dt) * dist[0], cos(speed[1] * dt) * dist[1], sin(speed[2] * dt) * dist[2]));
+	modelStack.push(localTransform);			// store planet-sun coordinate
+	localTransform *= glm::rotate(glm::mat4(1.f), -80.f, glm::vec3(1, 0, 0));
+	localTransform *= glm::rotate(glm::mat4(1.f), rotSpeed[0] * (float)dt, rotVector);
+	localTransform *= glm::scale(glm::vec3(scale[0], scale[1], scale[2]));
+	if (m_mesh != NULL)
+		m_mesh->Update(localTransform);
+
+	while (!modelStack.empty()) {
+		modelStack.pop();
 	}
 }
 

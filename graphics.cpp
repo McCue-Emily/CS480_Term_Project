@@ -210,7 +210,7 @@ void Graphics::ObservationModeUpdate(double dt) {
 		//glm::vec3 front = { localTransform[col].x, localTransform[col].y, localTransform[col].z };
 		//col = 2;
 		//glm::vec3 up = { localTransform[col].x, localTransform[col].y, localTransform[col].z };
-		pos = { 100.0f, 100.0f, 100.0f };
+		pos = { 10.0f, 100.0f, 10.0f };
 		m_camera->PlanetaryObsMode(pos);
 		//m_camera->cameraPosVert(0.5f);
 	modelStack.pop();	// Camera

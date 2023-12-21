@@ -76,23 +76,18 @@ void Asteroid::Render(GLint posAttribLoc, GLint colAttribLoc, GLint tcAttribLoc,
         translations[index++] = translation;
     }
 
-    //for (int y = -10; y < 10; y += 2)
-    //{
-    //    for (int x = -10; x < 10; x += 2)
-    //    {
-    //        glm::vec2 translation;
-    //        translation.x = (float)x / 10.0f + offset;
-    //        translation.y = (float)y / 10.0f + offset;
-    //        translations[index++] = translation;
-    //    }
-    //}
-
     glBindVertexArray(vao);
+
     // Enable vertex attibute arrays for each vertex attrib
     glEnableVertexAttribArray(posAttribLoc);
     glEnableVertexAttribArray(colAttribLoc);
     glEnableVertexAttribArray(tcAttribLoc);
-    //glEnableVertexAttribArray(translations);
+
+    //glUniform2fv(translations, 2, (GLfloat*)&pointArray);
+
+    //for (int i = 0; i < instances; i++) {
+    //    glUniform2fv(instances[i])
+    //}
 
     // Bind your VBO
     glBindBuffer(GL_ARRAY_BUFFER, VB);

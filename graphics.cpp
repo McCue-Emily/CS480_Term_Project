@@ -46,12 +46,24 @@ bool Graphics::Initialize(int width, int height)
 	m_shader = new Shader();
 	if (!m_shader->Initialize())
 	{
-		printf("Shader Failed to Initialize\n");
+		printf("General Shader Failed to Initialize\n");
+		return false;
+	}
+
+	asteroid_shader = new Shader();
+	if (!asteroid_shader->Initialize())
+	{
+		printf("Asteroid Shader Failed to Initialize\n");
 		return false;
 	}
 
 	// Add the vertex shader
 	if (!m_shader->AddShader(GL_VERTEX_SHADER))
+	{
+		printf("Vertex Shader failed to Initialize\n");
+		return false;
+	}
+	if (!asteroid_shader->AddShader(GL_VERTEX_SHADER))
 	{
 		printf("Vertex Shader failed to Initialize\n");
 		return false;
@@ -63,9 +75,19 @@ bool Graphics::Initialize(int width, int height)
 		printf("Fragment Shader failed to Initialize\n");
 		return false;
 	}
+	if (!asteroid_shader->AddShader(GL_FRAGMENT_SHADER))
+	{
+		printf("Fragment Shader failed to Initialize\n");
+		return false;
+	}
 
 	// Connect the program
 	if (!m_shader->Finalize())
+	{
+		printf("Program to Finalize\n");
+		return false;
+	}
+	if (!asteroid_shader->Finalize())
 	{
 		printf("Program to Finalize\n");
 		return false;
@@ -114,13 +136,13 @@ bool Graphics::Initialize(int width, int height)
 	m_sphere11 = new Sphere(48, "assets\\Neptune.jpg");
 
 	// Ceres - Asteroid
-	m_sphere7 = new Sphere(48, "assets\\Ceres.jpg");
+	m_sphere7 = new Asteroid(48, "assets\\Ceres.jpg");
 
 	// Eris - Asteroid
-	m_sphere12 = new Sphere(48, "assets\\Eris.jpg");
+	m_sphere12 = new Asteroid(48, "assets\\Eris.jpg");
 
 	// Haumea - Asteroid
-	m_sphere13 = new Sphere(48, "assets\\Haumea.jpg");
+	m_sphere13 = new Asteroid(48, "assets\\Haumea.jpg");
 
 	// SkyBox
 	m_skybox = new SkyBox("assts\\Cubemaps\\Galaxy-cubemap2.png");
@@ -557,6 +579,7 @@ void Graphics::Render()
 
 	// Start the correct program
 	m_shader->Enable();
+	asteroid_shader->Enable();
 
 
 	// Send in the projection and view to the shader (stay the same while camera intrinsic(perspective) and extrinsic (view) parameters are the same
@@ -702,7 +725,7 @@ void Graphics::Render()
 		if (m_sphere7->hasTex) {
 			glActiveTexture(GL_TEXTURE0);
 			glBindTexture(GL_TEXTURE_2D, m_sphere7->getTextureID());
-			GLuint sampler = m_shader->GetUniformLocation("sp");
+			GLuint sampler = asteroid_shader->GetUniformLocation("sp");
 			if (sampler == INVALID_UNIFORM_LOCATION)
 			{
 				printf("Sampler Not found not found\n");
@@ -798,7 +821,7 @@ void Graphics::Render()
 		if (m_sphere12->hasTex) {
 			glActiveTexture(GL_TEXTURE0);
 			glBindTexture(GL_TEXTURE_2D, m_sphere12->getTextureID());
-			GLuint sampler = m_shader->GetUniformLocation("sp");
+			GLuint sampler = asteroid_shader->GetUniformLocation("sp");
 			if (sampler == INVALID_UNIFORM_LOCATION)
 			{
 				printf("Sampler Not found not found\n");
@@ -814,7 +837,7 @@ void Graphics::Render()
 		if (m_sphere13->hasTex) {
 			glActiveTexture(GL_TEXTURE0);
 			glBindTexture(GL_TEXTURE_2D, m_sphere13->getTextureID());
-			GLuint sampler = m_shader->GetUniformLocation("sp");
+			GLuint sampler = asteroid_shader->GetUniformLocation("sp");
 			if (sampler == INVALID_UNIFORM_LOCATION)
 			{
 				printf("Sampler Not found not found\n");
@@ -896,6 +919,62 @@ bool Graphics::collectShPrLocs() {
 		anyProblem = false;
 	}
 
+
+	// Asteroid Shader
+
+	// Locate the projection matrix in the shader
+	m_projectionMatrix = asteroid_shader->GetUniformLocation("projectionMatrix");
+	if (m_projectionMatrix == INVALID_UNIFORM_LOCATION)
+	{
+		printf("m_projectionMatrix not found\n");
+		anyProblem = false;
+	}
+
+	// Locate the view matrix in the shader
+	m_viewMatrix = asteroid_shader->GetUniformLocation("viewMatrix");
+	if (m_viewMatrix == INVALID_UNIFORM_LOCATION)
+	{
+		printf("m_viewMatrix not found\n");
+		anyProblem = false;
+	}
+
+	// Locate the model matrix in the shader
+	m_modelMatrix = asteroid_shader->GetUniformLocation("modelMatrix");
+	if (m_modelMatrix == INVALID_UNIFORM_LOCATION)
+	{
+		printf("m_modelMatrix not found\n");
+		anyProblem = false;
+	}
+
+	// Locate the position vertex attribute
+	m_positionAttrib = asteroid_shader->GetAttribLocation("v_position");
+	if (m_positionAttrib == -1)
+	{
+		printf("v_position attribute not found\n");
+		anyProblem = false;
+	}
+
+	// Locate the color vertex attribute
+	m_colorAttrib = asteroid_shader->GetAttribLocation("v_color");
+	if (m_colorAttrib == -1)
+	{
+		printf("v_color attribute not found\n");
+		anyProblem = false;
+	}
+
+	// Locate the color vertex attribute
+	m_tcAttrib = asteroid_shader->GetAttribLocation("v_tc");
+	if (m_tcAttrib == -1)
+	{
+		printf("v_texcoord attribute not found\n");
+		anyProblem = false;
+	}
+
+	m_hasTexture = asteroid_shader->GetUniformLocation("hasTexture");
+	if (m_hasTexture == INVALID_UNIFORM_LOCATION) {
+		printf("hasTexture uniform not found\n");
+		anyProblem = false;
+	}
 	return anyProblem;
 }
 

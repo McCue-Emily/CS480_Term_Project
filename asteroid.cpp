@@ -65,12 +65,34 @@ void Asteroid::Render(GLint positionAttribLoc, GLint colorAttribLoc)
 
 void Asteroid::Render(GLint posAttribLoc, GLint colAttribLoc, GLint tcAttribLoc, GLint hasTextureLoc)
 {
+    const int instances = 5;
+    glm::vec2 translations[instances];
+    int index = 0;
+    float offset = 5.0f;
+
+    for (int x = 0; x < instances; x++) {
+        glm::vec2 translation;
+        translation.x = (float)x / 10.0f + offset;
+        translations[index++] = translation;
+    }
+
+    //for (int y = -10; y < 10; y += 2)
+    //{
+    //    for (int x = -10; x < 10; x += 2)
+    //    {
+    //        glm::vec2 translation;
+    //        translation.x = (float)x / 10.0f + offset;
+    //        translation.y = (float)y / 10.0f + offset;
+    //        translations[index++] = translation;
+    //    }
+    //}
 
     glBindVertexArray(vao);
     // Enable vertex attibute arrays for each vertex attrib
     glEnableVertexAttribArray(posAttribLoc);
     glEnableVertexAttribArray(colAttribLoc);
     glEnableVertexAttribArray(tcAttribLoc);
+    //glEnableVertexAttribArray(translations);
 
     // Bind your VBO
     glBindBuffer(GL_ARRAY_BUFFER, VB);
@@ -97,7 +119,7 @@ void Asteroid::Render(GLint posAttribLoc, GLint colAttribLoc, GLint tcAttribLoc,
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, IB);
 
     // Render
-    glDrawElementsInstanced(GL_TRIANGLES, Indices.size(), GL_UNSIGNED_INT, 0, 5);  // last parameter is the # of instances
+    glDrawElementsInstanced(GL_TRIANGLES, Indices.size(), GL_UNSIGNED_INT, 0, 5);  // last parameter is the # of instances  todo # instances must match shader.cpp
 
     // Disable vertex arrays
     glDisableVertexAttribArray(posAttribLoc);

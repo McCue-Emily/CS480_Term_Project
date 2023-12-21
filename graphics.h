@@ -11,6 +11,7 @@ using namespace std;
 #include "object.h"
 #include "ring.h"
 #include "sphere.h"
+#include "asteroid.h"
 #include "mesh.h"
 #include "skybox.h"
 
@@ -53,6 +54,7 @@ class Graphics
     Camera *m_camera;
     Camera *backup_camera;
     Shader *m_shader;
+    Shader* asteroid_shader;
 
     GLint m_projectionMatrix;
     GLint m_viewMatrix;
@@ -69,13 +71,13 @@ class Graphics
     Sphere* m_sphere4;
     Sphere* m_sphere5;
     Sphere* m_sphere6;
-    Sphere* m_sphere7;
+    Asteroid* m_sphere7;
     Sphere* m_sphere8;
     Sphere* m_sphere9;
     Sphere* m_sphere10;
     Sphere* m_sphere11;
-    Sphere* m_sphere12;
-    Sphere* m_sphere13;
+    Asteroid* m_sphere12;
+    Asteroid* m_sphere13;
 
     Mesh* m_mesh;
     Ring* m_ring;

@@ -504,30 +504,38 @@ void Graphics::HierarchicalUpdate2(double dt) {
 
 	modelStack.pop();	// Eris
 
+	//modelStack.pop(); 	// back to the planet coordinate
+	//modelStack.pop(); 	// back to the sun coordinate
+	while (!modelStack.empty()) {
+		modelStack.pop();
+	}
+
 	// Starship
-	speed = { 1, 1., 1. };
-	dist = { 0, 6., 6. };
-	transform(dist.begin(), dist.end(), dist.begin(), [system_distances_scale](float& c) { return c * system_distances_scale; });
-	rotVector = { 1 , 0, 0 };
-	rotSpeed = { 1, 1, 1. };
-	scale = { .02,.02,.02 };
-	transform(scale.begin(), scale.end(), scale.begin(), [orbiter_scale](float& c) { return c * orbiter_scale; });
-	localTransform = modelStack.top();	
-	localTransform *= glm::translate(glm::mat4(1.f),
-		glm::vec3(sin(speed[0] * dt) * dist[0], cos(speed[1] * dt) * dist[1], sin(speed[2] * dt) * dist[2]));
-	modelStack.push(localTransform);			// store planet-sun coordinate
-	localTransform *= glm::rotate(glm::mat4(1.f), -80.f, glm::vec3(1, 0, 0));
-	localTransform *= glm::rotate(glm::mat4(1.f), rotSpeed[0] * (float)dt , rotVector);
-	localTransform *= glm::scale(glm::vec3(scale[0], scale[1], scale[2]));
-	if (m_mesh != NULL)
-		m_mesh->Update(localTransform);
+	if (!observation_mode) {
+		//glm::vec4 v(m_camera->GetPos(), 0);
+		glm::vec3 pos = m_camera->GetFront();
+		//speed = { 1, 1., 1. };
+		//dist = { 0, 6., 6. };
+		//transform(dist.begin(), dist.end(), dist.begin(), [system_distances_scale](float& c) { return c * system_distances_scale; });
+		//rotVector = { 0 , 0, 0 };
+		//rotSpeed = { 1, 1, 1. };
+		scale = { .02,.02,.02 };
+		transform(scale.begin(), scale.end(), scale.begin(), [orbiter_scale](float& c) { return c * orbiter_scale; });
+		//localTransform = modelStack.top();
+		//localTransform *= glm::translate(glm::mat4(1.f), glm::vec3(sin(speed[0] * dt) * dist[0], cos(speed[1] * dt) * dist[1], sin(speed[2] * dt) * dist[2]));
+		//modelStack.push(localTransform);			// store planet-sun coordinate
+		//localTransform *= glm::rotate(glm::mat4(1.f), -80.f, glm::vec3(1, 0, 0));
+		//localTransform *= glm::rotate(glm::mat4(1.f), rotSpeed[0] * (float)dt, rotVector);
+		localTransform *= glm::translate(m_mesh->GetModel(), pos);
+		localTransform *= glm::scale(glm::vec3(scale[0], scale[1], scale[2]));
+		localTransform *= glm::translate(localTransform, glm::vec3(100.f,100.f,100.f));
+		if (m_mesh != NULL)
+			m_mesh->Update(localTransform);
 
-	modelStack.pop(); 	// back to the planet coordinate
-	modelStack.pop(); 	// back to the sun coordinate
-
-	//modelStack.pop();	// empy stack
-
-
+		while (!modelStack.empty()) {
+			modelStack.pop();
+		}
+	}
 }
 
 
